@@ -1,0 +1,408 @@
+.login-hospital {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-white);
+    height: 862px;
+    text-align: left;
+    font-size: 36px;
+    color: var(--color-gray-200);
+    font-family: var(--font-arimo);
+}
+.app {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(135deg, #eff6ff, #e0e7ff);
+    width: 1551px;
+    height: 862px;
+}
+.container {
+    position: absolute;
+    top: 126px;
+    left: 327.5px;
+    width: 896px;
+    height: 610px;
+}
+.login-hospital-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 432px;
+    height: 610px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+}
+.container2 {
+    align-self: stretch;
+    position: relative;
+    height: 320px;
+}
+.imagewithfallback-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: var(--br-16);
+    width: 432px;
+    height: 320px;
+    object-fit: cover;
+}
+.container3 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: var(--br-16);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), var(--color-gray-400));
+    width: 432px;
+    height: 320px;
+}
+.container4 {
+    align-self: stretch;
+    height: 266px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+.heading-1 {
+    align-self: stretch;
+    position: relative;
+    height: 40px;
+}
+.sistema-hospitalario {
+    position: absolute;
+    top: -3px;
+    left: 0px;
+    line-height: 40px;
+}
+.paragraph {
+    align-self: stretch;
+    position: relative;
+    height: 84px;
+    font-size: 18px;
+    color: var(--color-slategray);
+}
+.plataforma-integral-para {
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    line-height: 28px;
+    display: inline-block;
+    width: 374px;
+}
+.container5 {
+
+    position: absolute;              /* Permite usar top y left */
+    top: 750px;                      /* Ajusta este valor para subir o bajar */
+    left: 300px;                     /* Ajusta este valor para mover horizontalmente */
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* Dos columnas iguales */
+    grid-template-rows: auto;
+    justify-content: start;
+    align-content: start;
+    gap: 24px;
+    padding: 24px 0 0;
+    font-size: var(--fs-24);
+    z-index: 10;                     /* Asegura que esté por encima de otros elementos */
+
+}
+.container6 {
+    width: 100%;
+    position: absolute;
+    top: 750px;
+    left: 0px;
+    border-radius: var(--br-14);
+    background-color: var(--color-gray-600);
+    border: 1px solid var(--color-gray-500);
+    box-sizing: border-box;
+    height: 86px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 17px 17px var(--padding-1);
+}
+.container7 {
+    align-self: stretch;
+    height: var(--height-32);
+    display: flex;
+    align-items: flex-start;
+}
+.b {
+    flex: 1;
+    position: relative;
+    line-height: var(--lh-32);
+}
+.container8 {
+    align-self: stretch;
+    height: var(--height-20);
+    display: flex;
+    align-items: flex-start;
+    font-size: var(--fs-14);
+    color: var(--color-slategray);
+}
+.disponibilidad {
+    flex: 1;
+    position: relative;
+    line-height: var(--lh-20);
+}
+.container9 {
+    width: 100%;
+    position: absolute;
+    top: 750px;
+    left: 224px;
+    border-radius: var(--br-14);
+    background-color: var(--color-gray-600);
+    border: 1px solid var(--color-gray-500);
+    box-sizing: border-box;
+    height: 86px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 17px 17px var(--padding-1);
+}
+.card {
+    position: absolute;
+    top: 52px;
+    left: 464px;
+    box-shadow: 0px 10px 15px -3px var(--color-gray-500), 0px 4px 6px -4px var(--color-gray-500);
+    border-radius: var(--br-14);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-500);
+    box-sizing: border-box;
+    width: 432px;
+    height: 506px;
+    text-align: center;
+    font-size: var(--fs-24);
+    color: var(--color-gray-100);
+}
+.cardheader {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 430px;
+    height: 184px;
+}
+.hospitallogo-icon {
+    position: absolute;
+    top: 24px;
+    left: 183px;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+.cardtitle {
+    position: absolute;
+    top: 118px;
+    left: 24px;
+    width: var(--width-382);
+    height: var(--height-32);
+    display: flex;
+    align-items: flex-start;
+}
+.carddescription {
+    position: absolute;
+    top: 160px;
+    left: 24px;
+    width: var(--width-382);
+    height: 24px;
+    font-size: 16px;
+    color: var(--color-slategray);
+}
+.acceso-al-sistema {
+    position: absolute;
+    top: -2px;
+    left: 82.56px;
+    line-height: 24px;
+}
+.loginform {
+    position: absolute;
+    top: 209px;
+    left: 25px;
+    width: var(--width-382);
+    height: 272px;
+    text-align: left;
+    font-size: var(--fs-14);
+}
+.container12 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: var(--width-382);
+    height: 58px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-8);
+}
+.primitivelabel {
+    align-self: stretch;
+    height: var(--height-14);
+    display: flex;
+    align-items: center;
+}
+.email-o-usuario {
+    position: relative;
+    line-height: var(--lh-14);
+}
+.input {
+    align-self: stretch;
+    border-radius: var(--br-8);
+    background-color: var(--color-whitesmoke);
+    border: 1px solid var(--color-gray-400);
+    box-sizing: border-box;
+    height: var(--height-36);
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: var(--padding-4) var(--padding-12);
+    color: var(--color-slategray);
+}
+.doctorhospitalnmscom {
+    position: relative;
+}
+.container13 {
+    position: absolute;
+    top: 74px;
+    left: 0px;
+    width: var(--width-382);
+    height: 58px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-8);
+}
+.container14 {
+    align-self: stretch;
+    position: relative;
+    height: var(--height-36);
+    color: var(--color-slategray);
+}
+.login-hospital-input {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: var(--br-8);
+    background-color: var(--color-whitesmoke);
+    border: 1px solid var(--color-gray-400);
+    box-sizing: border-box;
+    width: var(--width-382);
+    height: var(--height-36);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: var(--padding-4) var(--padding-12);
+}
+.button-icon {
+    position: absolute;
+    top: 0px;
+    left: 346px;
+    border-radius: var(--br-8);
+    width: 36px;
+    height: var(--height-36);
+}
+.container15 {
+    position: absolute;
+    top: 148px;
+    left: 0px;
+    width: var(--width-382);
+    height: var(--height-20);
+    display: flex;
+    align-items: center;
+    gap: var(--gap-8);
+}
+.primitivebutton {
+    width: var(--width-16);
+    position: relative;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    background-color: var(--color-whitesmoke);
+    border: 1px solid var(--color-gray-500);
+    box-sizing: border-box;
+    height: var(--height-16);
+}
+.primitivelabel2 {
+    width: 134.7px;
+    height: var(--height-20);
+    display: flex;
+    align-items: center;
+}
+.recordar-credenciales {
+    position: relative;
+    line-height: var(--lh-20);
+}
+.button {
+    position: absolute;
+    top: 184px;
+    left: 0px;
+    border-radius: var(--br-8);
+    background-color: var(--color-gray-200);
+    width: var(--width-382);
+    height: var(--height-36);
+    color: var(--color-white);
+}
+.icon {
+    position: absolute;
+    top: 10px;
+    left: 133.11px;
+    width: var(--width-16);
+    height: var(--height-16);
+}
+.iniciar-sesin {
+    position: absolute;
+    top: 6px;
+    left: 165.11px;
+    line-height: var(--lh-20);
+}
+.login-hospital-button {
+    position: absolute;
+    top: 236px;
+    left: 93.92px;
+    border-radius: var(--br-8);
+    width: 194.2px;
+    height: var(--height-36);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    box-sizing: border-box;
+    color: var(--color-gray-200);
+}
+.t2 {
+    position: absolute;
+    top: 411px;
+    left: 473px;
+    width: var(--width-16);
+    height: var(--height-16);
+    opacity: 0;
+}
+.login-hospital-app {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1551px;
+    height: 862px;
+    overflow: hidden;
+}
+.container16 {
+    position: absolute;
+    top: -431px;
+    left: 1942.5px;
+    filter: blur(128px);
+    border-radius: 33554400px;
+    background-color: var(--color-gray-300);
+    width: 384px;
+    height: 384px;
+}
+.container17 {
+    position: absolute;
+    top: 909px;
+    left: -775.5px;
+    filter: blur(128px);
+    border-radius: 33554400px;
+    background-color: var(--color-cornflowerblue);
+    width: 384px;
+    height: 384px;
+}
+
