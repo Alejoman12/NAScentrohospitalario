@@ -156,7 +156,7 @@
         </div>
 
         <div class="slotclone">
-            <div class="selectitemtext"><div class="mejorar-formulario-de-registro-paciente">Paciente</div></div>
+            <div class="selectitemtext"><div class="mejorar-formulario-de-registro-paciente"></div></div>
         </div>
         <div class="t11"></div>
     </div>
