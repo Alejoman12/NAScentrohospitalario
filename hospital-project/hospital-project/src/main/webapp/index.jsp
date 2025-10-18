@@ -73,7 +73,7 @@
                     </button>
 
                     <div class="login-hospital-button" style="z-index: 1; left: 130px">
-                        <a href="jsp/recuperar.jsp" class="recordar-credenciales">¿Olvidaste tu contraseña?</a>
+                        <a href="jsp/OlvidarContrasena.jsp" class="recordar-credenciales">¿Olvidaste tu contraseña?</a>
                     </div>
 
                     <div class="register-link" style="position: absolute; top: 300px; left: 100px; z-index: 1;">

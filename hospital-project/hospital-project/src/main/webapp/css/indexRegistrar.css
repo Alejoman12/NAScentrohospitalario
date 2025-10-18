@@ -1,9 +1,8 @@
-.mejorar-formulario-de-registro {
+.modificar-registro-de-usuario {
     width: 100%;
-    height: 909px;
+    height: 1109px;
     position: relative;
     background-color: var(--color-white);
-    overflow: hidden;
     text-align: left;
     font-size: var(--fs-24);
     color: var(--color-white);
@@ -19,7 +18,7 @@
     width: 384px;
     height: 384px;
 }
-.mejorar-formulario-de-registro-container {
+.container1 {
     position: absolute;
     top: 725px;
     left: -200px;
@@ -29,7 +28,7 @@
     width: 384px;
     height: 384px;
 }
-.container2 {
+.container37 {
     position: absolute;
     top: 43px;
     left: 153px;
@@ -37,23 +36,16 @@
     border-radius: 24px;
     background-color: var(--color-white);
     width: 1200px;
-    height: 823px;
+    height: var(--height-823);
     overflow: hidden;
-}
-.container3 {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 1200px;
-    height: 823px;
     display: grid;
-    grid-template-rows: 1px ;
-    grid-template-columns: 1px ;
+    grid-template-rows:1px ;
+    grid-template-columns:1px ;
     justify-content: start;
     align-content: start;
     gap: 0px;
 }
-.container4 {
+.container17 {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -61,130 +53,156 @@
     left: 0px;
     overflow: hidden;
 }
-.imagewithfallback-icon {
+.imagewithfallback {
     position: absolute;
     top: 0px;
     left: 0px;
     width: 600px;
-    height: 823px;
+    height: var(--height-823);
+}
+.image-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 600px;
+    height: var(--height-823);
     object-fit: cover;
 }
-.container5 {
+.modificar-registro-de-usuario-container {
     position: absolute;
     top: 0px;
     left: 0px;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.7));
+    background-color: var(--color-gray-800);
     width: 600px;
-    height: 823px;
+    height: var(--height-823);
 }
-.container6 {
+.container2 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+    width: 600px;
+    height: var(--height-823);
+}
+.container5 {
     position: absolute;
     top: 48px;
     left: 48px;
     width: var(--width-504);
     height: 57px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
 }
-.container-icon {
-    height: 56px;
-    width: 56px;
+.container3-icon {
+    position: absolute;
+    top: 0.5px;
+    left: 0px;
     border-radius: 12px;
+    width: 56px;
+    height: 56px;
 }
-.container7 {
-    height: 57px;
+.container4 {
+    position: absolute;
+    top: 0px;
+    left: 68px;
     width: 255.2px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    height: 57px;
 }
-.heading-2 {
-    align-self: stretch;
+.heading2 {
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    width: 257.5px;
     height: var(--height-36);
-    position: relative;
 }
 .nas-centro-hospitalario {
     position: absolute;
-    top: -2px;
+    top: 0px;
     left: 0px;
     line-height: var(--lh-36);
 }
 .paragraph {
-    align-self: stretch;
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    width: 109.7px;
     height: var(--height-21);
-    position: relative;
     font-size: var(--fs-14);
-    color: var(--color-gray-800);
+    color: var(--color-gray-700);
 }
 .sistema-de-salud {
     position: absolute;
-    top: -1px;
+    top: 0px;
     left: 0px;
     line-height: var(--lh-21);
 }
-.container8 {
+.container16 {
     position: absolute;
     top: 129px;
     left: 48px;
     width: var(--width-504);
     height: 439px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
     font-size: var(--fs-16);
 }
-.heading-3 {
-    align-self: stretch;
+.heading3 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: var(--width-504);
     height: 80px;
-    position: relative;
     font-size: var(--fs-32);
 }
-.nete-a-nuestra {
+.modificar-registro-de-usuario-paragraph {
     position: absolute;
     top: -3px;
     left: 0px;
+    width: 227.7px;
+    height: var(--height-40);
+}
+.unete-a-nuestra {
+    position: absolute;
+    top: 1px;
+    left: 0px;
     line-height: var(--lh-40);
 }
-.plataforma-mdica {
+.paragraph2 {
     position: absolute;
     top: 37px;
     left: 0px;
-    line-height: var(--lh-40);
+    width: 263.2px;
+    height: var(--height-40);
 }
-.mejorar-formulario-de-registro-paragraph {
-    align-self: stretch;
+.paragraph1 {
+    position: absolute;
+    top: 102px;
+    left: 0px;
+    width: 483px;
     height: var(--height-48);
-    position: relative;
-    color: var(--color-gray-700);
+    color: var(--color-gray-600);
 }
 .accede-a-los {
     position: absolute;
-    top: -2px;
+    top: 0px;
     left: 0px;
     line-height: var(--lh-24);
     display: inline-block;
-    width: 483px;
+    width: 433px;
 }
-.container9 {
-    align-self: stretch;
+.container15 {
+    position: absolute;
+    top: 176px;
+    left: 0px;
+    width: var(--width-504);
     height: 263px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 24px var(--padding-0) var(--padding-0);
-    box-sizing: border-box;
-    gap: 16px;
 }
-.container10 {
-    align-self: stretch;
-    height: 69px;
-    position: relative;
+.container8 {
+    position: absolute;
+    top: 24px;
+    left: 0px;
     border-radius: var(--br-10);
-    background-color: var(--color-gray-600);
+    background-color: var(--color-gray-500);
+    width: var(--width-504);
+    height: 69px;
 }
-.mejorar-formulario-de-registro-container-icon {
+.container6-icon {
     position: absolute;
     top: 16px;
     left: 12px;
@@ -192,133 +210,181 @@
     width: var(--width-32);
     height: var(--height-32);
 }
-.container11 {
+.container7 {
     position: absolute;
     top: 12px;
     left: 56px;
     width: 283.3px;
     height: 45px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
-.heading-4 {
-    align-self: stretch;
+.heading4 {
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    width: 97.9px;
     height: var(--height-24);
-    position: relative;
 }
-.paragraph2 {
-    align-self: stretch;
+.modificar-registro-de-usuario-paragraph2 {
+    position: absolute;
+    top: 23px;
+    left: 0px;
+    width: 277.8px;
     height: var(--height-21);
-    position: relative;
     font-size: var(--fs-14);
-    color: var(--color-gray-500);
+    color: var(--color-gray-400);
 }
-.container13 {
+.container11 {
+    position: absolute;
+    top: 109px;
+    left: 0px;
+    border-radius: var(--br-10);
+    background-color: var(--color-gray-500);
+    width: var(--width-504);
+    height: 69px;
+}
+.container10 {
     position: absolute;
     top: 12px;
     left: 56px;
     width: 249px;
     height: 45px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
-.historial-seguro {
+.heading5 {
     position: absolute;
     top: -2px;
     left: 0px;
+    width: 111.2px;
+    height: var(--height-24);
+}
+.historial-seguro {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     line-height: var(--lh-24);
 }
-.container15 {
+.paragraph3 {
+    position: absolute;
+    top: 23px;
+    left: 0px;
+    width: 250px;
+    height: var(--height-21);
+    font-size: var(--fs-14);
+    color: var(--color-gray-400);
+}
+.container14 {
+    position: absolute;
+    top: 194px;
+    left: 0px;
+    border-radius: var(--br-10);
+    background-color: var(--color-gray-500);
+    width: var(--width-504);
+    height: 69px;
+}
+.container13 {
     position: absolute;
     top: 12px;
     left: 56px;
     width: 265.3px;
     height: 45px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
-.text {
+.heading6 {
     position: absolute;
-    top: 568px;
-    left: 48px;
-    width: 394.5px;
+    top: -2px;
+    left: 0px;
+    width: 149.4px;
+    height: var(--height-24);
+}
+.paragraph4 {
+    position: absolute;
+    top: 23px;
+    left: 0px;
+    width: 270px;
     height: var(--height-21);
     font-size: var(--fs-14);
     color: var(--color-gray-400);
 }
-.container16 {
+.text {
+    position: absolute;
+    top: 567px;
+    left: 48px;
+    width: 400.7px;
+    height: var(--height-21);
+    font-size: var(--fs-14);
+    color: var(--color-gray-300);
+}
+.container36 {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0px;
     left: 600px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding: var(--padding-0) var(--padding-0) var(--padding-0) 48px;
-    box-sizing: border-box;
-    gap: 32px;
-    color: var(--color-gray-200);
+    color: var(--color-gray-100);
 }
-.container17 {
+.container18 {
+    position: absolute;
+    top: 81px;
+    left: 48px;
     width: var(--width-504);
     height: 68px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--gap-8);
+}
+.heading1 {
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    width: 138.8px;
+    height: var(--height-36);
 }
 .paragraph5 {
-    align-self: stretch;
+    position: absolute;
+    top: 42px;
+    left: 0px;
+    width: 344.2px;
     height: var(--height-24);
-    position: relative;
     font-size: var(--fs-16);
     color: var(--color-slategray-200);
 }
 .form {
+    position: absolute;
+    top: 181px;
+    left: 48px;
     width: var(--width-504);
-    height: 627px;
-    position: relative;
+    height: 561px;
     font-size: var(--fs-14);
 }
-.container18 {
+.container3 {
     position: absolute;
     top: 0px;
     left: 0px;
     width: var(--width-504);
     height: 66px;
     display: grid;
-    grid-template-rows: 1px ;
-    grid-template-columns: 1px;
+    grid-template-rows:1px ;
+    grid-template-columns:1px ;
     justify-content: start;
     align-content: start;
     gap: 0px;
 }
-.container19 {
+.container6 {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0px;
     left: 0px;
 }
-.primitivelabel {
+.paragraph6 {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: var(--width-246);
+    width: 59.1px;
     height: var(--height-14);
-    display: flex;
-    align-items: center;
 }
 .nombre {
-    position: relative;
+    position: absolute;
+    top: 0px;
+    left: 0px;
     line-height: var(--lh-14);
 }
-.container20 {
+.container9 {
     position: absolute;
     top: 22px;
     left: 0px;
@@ -326,17 +392,27 @@
     height: var(--height-44);
     color: var(--color-slategray-100);
 }
-.input {
+.container12 {
     position: absolute;
     top: 0px;
     left: 0px;
     border-radius: var(--br-10);
     background-color: var(--color-whitesmoke-100);
-    border: var(--border-1);
-    box-sizing: border-box;
     width: var(--width-246);
     height: var(--height-44);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.text-input {
+    align-self: stretch;
+    height: var(--height-44);
+    border-radius: var(--br-10);
+    background-color: var(--color-whitesmoke-100);
+    border: var(--border-1);
+    box-sizing: border-box;
     overflow: hidden;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     padding: var(--padding-4) var(--padding-12) var(--padding-4) var(--padding-40);
@@ -344,72 +420,30 @@
 .juan {
     position: relative;
 }
-.icon {
+.icon4 {
     position: absolute;
     top: 14px;
     left: 12px;
     width: var(--width-16);
     height: var(--height-16);
 }
-.container21 {
+.container19 {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0px;
     left: 258px;
 }
-.container23 {
+.paragraph7 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 59.2px;
+    height: var(--height-14);
+}
+.container22 {
     position: absolute;
     top: 82px;
-    left: 0px;
-    width: var(--width-504);
-    height: 58px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--gap-8);
-}
-.primitivelabel2 {
-    width: var(--width-504);
-    height: var(--height-14);
-    display: flex;
-    align-items: center;
-}
-.primitivebutton {
-    width: var(--width-504);
-    flex: 1;
-    border-radius: var(--br-10);
-    background-color: var(--color-whitesmoke-100);
-    border: var(--border-1);
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--padding-0) var(--padding-12);
-    gap: 20px;
-    color: var(--color-gray-100);
-}
-.primitivespan {
-    height: 20px;
-    width: 51.7px;
-    overflow: hidden;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-}
-.paciente {
-    position: relative;
-    line-height: var(--lh-20);
-}
-.icon2 {
-    height: var(--height-16);
-    width: var(--width-16);
-    position: relative;
-    opacity: 0.5;
-}
-.container24 {
-    position: absolute;
-    top: 156px;
     left: 0px;
     width: var(--width-504);
     height: 66px;
@@ -420,21 +454,41 @@
     align-content: start;
     gap: 0px;
 }
+.paragraph8 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 123.7px;
+    height: var(--height-14);
+}
+.paragraph9 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 62.3px;
+    height: var(--height-14);
+}
+.icon8 {
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    width: var(--width-16);
+    height: var(--height-16);
+    object-fit: cover;
+}
 .container29 {
     position: absolute;
-    top: 238px;
+    top: 164px;
     left: 0px;
     width: var(--width-504);
     height: 66px;
 }
-.primitivelabel5 {
+.paragraph10 {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: var(--width-504);
+    width: 67.7px;
     height: var(--height-14);
-    display: flex;
-    align-items: center;
 }
 .container30 {
     position: absolute;
@@ -444,39 +498,41 @@
     height: var(--height-44);
     color: var(--color-slategray-100);
 }
-.input4 {
+.container31 {
     position: absolute;
     top: 0px;
     left: 0px;
     border-radius: var(--br-10);
     background-color: var(--color-whitesmoke-100);
-    border: var(--border-1);
-    box-sizing: border-box;
     width: var(--width-504);
     height: var(--height-44);
-    overflow: hidden;
     display: flex;
-    align-items: center;
-    padding: var(--padding-4) var(--padding-12) var(--padding-4) var(--padding-40);
+    flex-direction: column;
+    align-items: flex-start;
 }
-.container31 {
+.container32 {
     position: absolute;
-    top: 320px;
+    top: 246px;
     left: 0px;
     width: var(--width-504);
     height: 66px;
 }
-.input5 {
+.paragraph11 {
     position: absolute;
     top: 0px;
     left: 0px;
+    width: 81.7px;
+    height: var(--height-14);
+}
+.password-input {
+    align-self: stretch;
+    height: var(--height-44);
     border-radius: var(--br-10);
     background-color: var(--color-whitesmoke-100);
     border: var(--border-1);
     box-sizing: border-box;
-    width: var(--width-504);
-    height: var(--height-44);
     overflow: hidden;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     padding: var(--padding-4) var(--padding-40);
@@ -488,9 +544,9 @@
     width: var(--width-16);
     height: var(--height-16);
 }
-.container33 {
+.container35 {
     position: absolute;
-    top: 410px;
+    top: 336px;
     left: 0px;
     border-radius: var(--br-10);
     background-color: var(--color-whitesmoke-100);
@@ -498,163 +554,164 @@
     height: 72px;
     color: var(--color-slategray-200);
 }
-.mejorar-formulario-de-registro-primitivebutton {
+.button {
     position: absolute;
     top: 14px;
     left: 12px;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
     border-radius: 4px;
     background-color: var(--color-whitesmoke-200);
-    border: 1px solid var(--color-gray-300);
+    border: 1px solid var(--color-gray-200);
     box-sizing: border-box;
     width: var(--width-16);
     height: var(--height-16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.primitivelabel7 {
+.container38 {
     position: absolute;
     top: 12px;
     left: 40px;
     width: 452px;
     height: var(--height-48);
 }
-.acepto-los {
+.paragraph12 {
     position: absolute;
     top: -0.75px;
     left: 0px;
-    line-height: 22.75px;
-    display: inline-block;
     width: 46px;
+    height: 45.5px;
 }
-.registrarusuarios {
+.acepto-los {
     position: absolute;
     top: 0px;
-    left: 56.17px;
-    width: 120.1px;
+    left: 0px;
+    line-height: 22.75px;
+    display: inline-block;
+    width: 44px;
+}
+.link {
+    position: absolute;
+    top: -2px;
+    left: 56.16px;
+    width: 87px;
     height: var(--height-48);
     font-size: var(--fs-16);
     color: var(--color-cornflowerblue-100);
 }
-.trminos-y-condiciones {
+.terminos-y-condiciones {
     position: absolute;
-    top: -2px;
+    top: 0px;
     left: 0px;
     line-height: var(--lh-24);
     display: inline-block;
-    width: 87px;
+    width: 85px;
+}
+.paragraph13 {
+    position: absolute;
+    top: -0.75px;
+    left: 184.3px;
+    width: var(--width-11);
+    height: 45.5px;
 }
 .y-la {
     position: absolute;
-    top: -0.75px;
-    left: 184.31px;
+    top: 0px;
+    left: 0px;
     line-height: 22.75px;
     display: inline-block;
-    width: 11px;
+    width: var(--width-11);
 }
-.mejorar-formulario-de-registro-registrarusuarios {
+.modificar-registro-de-usuario-link {
     position: absolute;
-    top: 0px;
-    left: 208.06px;
-    width: 111.7px;
+    top: -2px;
+    left: 208.05px;
+    width: 76px;
     height: var(--height-48);
     font-size: var(--fs-16);
     color: var(--color-cornflowerblue-100);
 }
-.poltica-de-privacidad {
+.politica-de-privacidad {
     position: absolute;
-    top: -2px;
+    top: 0px;
     left: 0px;
     line-height: var(--lh-24);
     display: inline-block;
-    width: 76px;
+    width: 73px;
 }
-.de-nas-centro {
+.paragraph14 {
     position: absolute;
     top: -0.75px;
     left: 327.75px;
+    width: 95px;
+    height: 45.5px;
+}
+.de-nas-centro {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     line-height: 22.75px;
     display: inline-block;
     width: 95px;
 }
-.button {
+.modificar-registro-de-usuario-button {
     position: absolute;
-    top: 506px;
+    top: 432px;
     left: 0px;
-    box-shadow: 0px 10px 15px -3px var(--color-gray-300), 0px 4px 6px -4px var(--color-gray-300);
+    box-shadow: 0px 10px 15px -3px var(--color-gray-200), 0px 4px 6px -4px var(--color-gray-200);
     border-radius: var(--br-10);
     background: linear-gradient(180deg, var(--color-cornflowerblue-100), #3d8ceb);
     width: var(--width-504);
     height: var(--height-48);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 16px;
-    box-sizing: border-box;
     color: var(--color-white);
 }
-.container34 {
+.paragraph15 {
     position: absolute;
-    top: 586px;
+    top: 14px;
+    left: 211.53px;
+    width: 80.9px;
+    height: 20px;
+}
+.modificar-registro-de-usuario-crear-cuenta {
+    position: absolute;
+    top: 0px;
     left: 0px;
-    border-top: var(--border-1);
-    box-sizing: border-box;
+    line-height: 20px;
+}
+.container39 {
+    position: absolute;
+    top: 520px;
+    left: 0px;
     width: var(--width-504);
     height: 41px;
     text-align: center;
     font-size: var(--fs-16);
     color: var(--color-slategray-200);
 }
-.mejorar-formulario-de-registro-text {
+.container40 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-top: var(--border-1);
+    box-sizing: border-box;
+    width: var(--width-504);
+    height: 41px;
+}
+.paragraph16 {
     position: absolute;
     top: 18px;
-    left: 126.48px;
-    width: 163px;
-    height: var(--height-21);
-    display: flex;
-    align-items: flex-start;
+    left: 126.47px;
+    width: 158px;
+    height: var(--height-24);
 }
-.ya-tienes-una {
-    position: relative;
-    line-height: var(--lh-24);
-}
-.mejorar-formulario-de-registro-button {
+.link2 {
     position: absolute;
-    top: 17px;
+    top: 15px;
     left: 289.5px;
     width: 88px;
     height: var(--height-24);
     text-align: left;
     color: var(--color-cornflowerblue-100);
-}
-.slotclone {
-    position: absolute;
-    top: 229px;
-    left: 647px;
-    width: 1px;
-    height: 1px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: var(--padding-0) var(--padding-0) var(--padding-0) var(--padding-0);
-    box-sizing: border-box;
-    font-size: var(--fs-16);
-    color: var(--color-gray-100);
-}
-.selectitemtext {
-    align-self: stretch;
-    height: 0px;
-    position: relative;
-}
-.mejorar-formulario-de-registro-paciente {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-.t11 {
-    position: absolute;
-    top: 570px;
-    left: 644px;
-    width: var(--width-16);
-    height: var(--height-16);
-    opacity: 0;
 }
 

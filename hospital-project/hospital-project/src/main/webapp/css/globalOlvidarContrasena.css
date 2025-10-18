@@ -14,24 +14,23 @@ body {
     --color-cornflowerblue-200: rgba(81, 162, 255, 0.05);
     --color-gainsboro: #e5e7eb;
     --color-gray-100: #030213;
-    --color-gray-200: rgba(0, 0, 0, 0.1);
-    --color-gray-300: rgba(255, 255, 255, 0.7);
-    --color-gray-400: rgba(255, 255, 255, 0.8);
-    --color-gray-500: rgba(255, 255, 255, 0.1);
-    --color-gray-600: rgba(255, 255, 255, 0.95);
-    --color-gray-700: rgba(255, 255, 255, 0.9);
-    --color-gray-800: rgba(0, 0, 0, 0.3);
-    --color-gray-900: rgba(3, 2, 19, 0.05);
+    --color-gray-200: rgba(255, 255, 255, 0.7);
+    --color-gray-300: rgba(255, 255, 255, 0.8);
+    --color-gray-400: rgba(255, 255, 255, 0.1);
+    --color-gray-500: rgba(255, 255, 255, 0.95);
+    --color-gray-600: rgba(255, 255, 255, 0.9);
+    --color-gray-700: rgba(3, 2, 19, 0.05);
     --color-slategray-100: #717182;
     --color-slategray-200: #6c757d;
     --color-white: #fff;
-    --color-whitesmoke-100: #f8f9fa;
-    --color-whitesmoke-200: #f3f3f5;
+    --color-whitesmoke: #f8f9fa;
+
+    /* Gap */
+    --gap-8: 8px;
 
     /* Padding */
+    --padding-0: 0px;
     --padding-4: 4px;
-    --padding-12: 12px;
-    --padding-40: 40px;
 
     /* BorderRadius */
     --br-10: 10px;
@@ -46,28 +45,19 @@ body {
     --fs-24: 24px;
     --fs-32: 32px;
 
-    /* Borders */
-    --border-1: 1px solid var(--color-gainsboro);
-
     /* WidthHeights */
-    --height-14: 14px;
     --height-16: 16px;
     --height-21: 21px;
     --height-24: 24px;
     --height-32: 32px;
     --height-36: 36px;
-    --height-40: 40px;
-    --height-44: 44px;
     --height-48: 48px;
-    --height-823: 823px;
-    --width-11: 11px;
     --width-16: 16px;
     --width-32: 32px;
-    --width-246: 246px;
     --width-504: 504px;
 
     /* LineHeights */
-    --lh-14: 14px;
+    --lh-20: 20px;
     --lh-21: 21px;
     --lh-24: 24px;
     --lh-36: 36px;
