@@ -27,6 +27,8 @@ public class RegistroPacienteServlet extends HttpServlet {
         String telefono = request.getParameter("telefono");
         String fechaNacimientoStr = request.getParameter("fechaNacimiento");
         String genero = request.getParameter("genero");
+        String pregunta = request.getParameter("pregunta");
+        String respuesta = request.getParameter("respuesta");
 
         // 2. Crear objeto Usuario
         Usuario usuario = new Usuario();
@@ -35,6 +37,9 @@ public class RegistroPacienteServlet extends HttpServlet {
         usuario.setContrasena(contrasena);
         usuario.setRol("Paciente");
         usuario.setActivo(true);
+        usuario.setPregunta(pregunta);
+        usuario.setRespuesta(respuesta);
+
 
         // 3. Insertar usuario y obtener ID
         UsuarioDAO usuarioDAO = new UsuarioDAO();

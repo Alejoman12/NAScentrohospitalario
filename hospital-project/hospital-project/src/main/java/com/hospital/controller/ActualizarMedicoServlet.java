@@ -25,6 +25,7 @@ public class ActualizarMedicoServlet extends HttpServlet {
         String telefono = request.getParameter("telefono");
         String correo = request.getParameter("correo");
 
+
         // Actualizar objeto Usuario
         usuario.setNombre(nombre);
         usuario.setCorreo(correo);

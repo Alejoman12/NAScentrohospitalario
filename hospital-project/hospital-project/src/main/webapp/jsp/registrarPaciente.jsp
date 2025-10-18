@@ -83,7 +83,7 @@
                         <div class="container21">
                             <div class="primitivelabel"><div class="nombre">Apellido *</div></div>
                             <div class="container20">
-                                <input type="text" name="apellido" class="input" placeholder="Ejemplo: Pérez" required />
+                                <input type="text" name="apellido" class="input" placeholder="Ejemplo: Perez" required />
                                 <img class="iconPersona" src="../imgenes/IconPersona.svg" alt="Icono Persona" />
                             </div>
                         </div>
@@ -92,6 +92,9 @@
                     <div class="container23">
                         <div class="primitivelabel2"><div class="nombre">Tipo de cuenta *</div></div>
                         <div class="primitivebutton">
+                            <div class="slotclone">
+                                <div class="selectitemtext"><div class="mejorar-formulario-de-registro-paciente"></div>Paciente</div>
+                            </div>
                             <img class="iconflechaHaciaAbajo" src="../imgenes/IconFlechahaciaAbajo.svg" alt="Icono Flecha Abajo" />
                         </div>
                     </div>
@@ -124,7 +127,7 @@
                     <div class="container31">
                         <div class="primitivelabel5"><div class="nombre">Contrasena *</div></div>
                         <div class="container30">
-                            <input type="password" name="contrasena" class="input5" placeholder="Mínimo 8 caracteres" minlength="8" required />
+                            <input type="password" name="contrasena" class="input5" placeholder="Minimo 8 caracteres" minlength="8" required />
                             <img class="iconCandado" src="../imgenes/IconCandado.svg" alt="Icono Candado" />
                             <img class="iconOjo" src="../imgenes/IconOjo.svg" alt="Icono Ojo" />
                         </div>
@@ -146,7 +149,7 @@
                     </div>
 
                     <div class="container34">
-                        <div class="mejorar-formulario-de-registro-text"><div class="ya-tienes-una">¿Ya tienes una cuenta?</div></div>
+                        <div class="mejorar-formulario-de-registro-text"><div class="ya-tienes-una">Ya tienes una cuenta?</div></div>
                         <div class="mejorar-formulario-de-registro-button">
                             <a href="../index.jsp" class="historial-seguro">Inicia sesion</a>
                         </div>
@@ -155,9 +158,7 @@
             </div>
         </div>
 
-        <div class="slotclone">
-            <div class="selectitemtext"><div class="mejorar-formulario-de-registro-paciente"></div></div>
-        </div>
+
         <div class="t11"></div>
     </div>
 </div>

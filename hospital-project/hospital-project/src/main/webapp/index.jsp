@@ -15,7 +15,7 @@
         <div class="container">
             <div class="login-hospital-container">
                 <div class="container2">
-                    <img class="imagewithfallback-icon" src="imgenes/HospitalFondo.jpg" alt="Imagen de fondo" />
+                    <img class="imagewithfallback-icon" src="imgenes/HospitalFondo.jpg" alt="Foto de implementos medicos" />
                     <div class="container3"></div>
                 </div>
                 <div class="container4">

@@ -23,6 +23,8 @@ public class RegistrarUsuarioServlet extends HttpServlet {
         String correo = request.getParameter("correo");
         String contrasena = request.getParameter("contrasena");
         String rol = request.getParameter("rol");
+        String pregunta = request.getParameter("pregunta");
+        String respuesta = request.getParameter("respuesta");
 
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);

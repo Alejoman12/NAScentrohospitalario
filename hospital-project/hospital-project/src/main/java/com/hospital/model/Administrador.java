@@ -5,10 +5,12 @@ public class Administrador extends Usuario {
     private String idAdminsitrador;
     private String telefono;
 
-    public Administrador(int id, String idAdminsitrador, String nombre, String correo, String contrasena, boolean activo, String telefono) {
-        super(id, nombre, correo, contrasena, "Administrador", activo);
+
+    public Administrador(int id, String idAdminsitrador, String nombre, String correo, String contrasena, boolean activo, String pregunta, String respuesta, String telefono) {
+        super(id, nombre, correo, contrasena, "Administrador", activo, pregunta, respuesta);
         this.idAdminsitrador = idAdminsitrador;
         this.telefono = telefono;
+
     }
 
     public Administrador() {
