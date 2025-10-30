@@ -5,20 +5,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Listado de Usuarios</title>
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/styles-listado-usuarios.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - NAS Centro Hospitalario</title>
+  <link rel="stylesheet" href="../css/styles-listado-usuarios.css" />
 </head>
 <body>
 
-<h1>Listado de Usuarios</h1>
+  <!-- ======= SIDEBAR ======= -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="../imgenes/logoHospital.jpg" alt="Logo NAS" class="sidebar-logo" />
+      <h1>NAS Centro Hospitalario</h1>
+    </div>
 
-<form action="listaBusquedaUsuarios-" method="get">
-    <input type="text" name="busqueda" placeholder="Buscar..." value="<%= request.getAttribute("busqueda") %>">
-    <button type="submit">Buscar</button>
-</form>
+    <nav class="sidebar-menu">
+      <ul>
+        <li><img src="../imgenes/Icono_dashboard.svg" alt=""><a href="administrador.jsp">Dashboard</a></li>
+        <li><img src="../imgenes/Icono_rendimiento_hospital.svg" alt="">Rendimiento Hospital</li>
+        <li><img src="../imgenes/Icono_departamentos.svg" alt="">Departamentos</li>
+        <li><img src="../imgenes/Icono_tablero_tareas.svg" alt="">Tablero Tareas</li>
+        <li><img src="../imgenes/Icono_reportes.svg" alt="">Reportes</li>
+        <li class="active"><img src="../imgenes/Icono_listado_usuarios.svg" alt="">Listado Usuarios</li>
+        <li><img src="../imgenes/Icono_perfil_medico.svg" alt="">Perfil Medico</li>
+        <li><img src="../imgenes/Icono_gestionar_usuarios.svg" alt=""><a href="gestionUsuarios.jsp">Gestionar Usuarios</a></li>
+        <li><img src="../imgenes/Icono_configuraciones.svg" alt="">Configuraciones</li>
+      </ul>
+    </nav>
 
-<table>
+    <div class="logout ">
+    <li><img src="../imgenes/Icono_cerrar_secion.svg" alt=""><a href="../index.jsp">Cerrar sesión</a></li>
+  </div>
+  </aside>
+
+  <!-- ======= CONTENIDO PRINCIPAL ======= -->
+  <main class="main-content">
+
+    <!-- TABLA DE REGISTROS -->
+    <section class="table-section">
+      <h3>Listado de Usuarios</h3>
+      <table>
     <thead>
     <tr>
         <th>ID</th>
@@ -51,6 +77,8 @@
     <% } %>
     </tbody>
 </table>
+    </section>
+  </main>
 
 </body>
 </html>

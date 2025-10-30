@@ -22,15 +22,15 @@
         <li><img src="../imgenes/Icono_departamentos.svg" alt="">Departamentos</li>
         <li><img src="../imgenes/Icono_tablero_tareas.svg" alt="">Tablero Tareas</li>
         <li><img src="../imgenes/Icono_reportes.svg" alt="">Reportes</li>
-        <li><img src="../imgenes/Icono_listado_usuarios.svg" alt="">Listado Usuarios</li>
+        <li><img src="../imgenes/Icono_listado_usuarios.svg" alt=""><a href="listadoUsuarios.jsp">Listado Usuarios</a></li>
         <li><img src="../imgenes/Icono_perfil_medico.svg" alt="">Perfil Medico</li>
-        <li><img src="../imgenes/Icono_gestionar_usuarios.svg" alt="">Gestionar Usuarios</li>
+        <li><img src="../imgenes/Icono_gestionar_usuarios.svg" alt=""><a href="gestionUsuarios.jsp">Gestionar Usuarios</a></li>
         <li><img src="../imgenes/Icono_configuraciones.svg" alt="">Configuraciones</li>
       </ul>
     </nav>
 
     <div class="logout ">
-    <li><img src="../imgenes/Icono_cerrar_secion.svg" alt="">Cerrar secion</li>
+    <li><img src="../imgenes/Icono_cerrar_secion.svg" alt=""><a href="../index.jsp">secion</a></li>
   </div>
   </aside>
 

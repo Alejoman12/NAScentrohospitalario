@@ -124,6 +124,31 @@ body {
   background-color: var(--color-danger);
 }
 
+.sidebar-menu a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.sidebar-menu a:visited{
+  color: inherit;
+}
+
+.sidebar-menu a:hover{
+  color: inherit;
+}
+
+.logout a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.logout a:visited{
+  color: inherit;
+}
+
+.logout a:hover{
+  color: inherit;
+}
 
 /* ==============================
    CONTENIDO PRINCIPAL
