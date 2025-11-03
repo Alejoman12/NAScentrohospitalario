@@ -5,90 +5,54 @@
     <meta charset="UTF-8" />
     <title>Hospital NMS - Iniciar Sesión</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/global.css" />
     <link rel="stylesheet" href="css/index-styles-figma.css" />
     <link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet" />
 </head>
+
 <body>
-<div class="login-hospital">
-    <div class="app">
-        <div class="container">
-            <div class="login-hospital-container">
-                <div class="container2">
-                    <img class="imagewithfallback-icon" src="imgenes/HospitalFondo.jpg" alt="Foto de implementos medicos" />
-                    <div class="container3"></div>
-                </div>
-                <div class="container4">
-                    <div class="heading-1">
-                        <b class="sistema-hospitalario">Sistema Hospitalario</b>
-                    </div>
-                    <div class="paragraph">
-                        <div class="plataforma-integral-para">
-                            Plataforma integral para la gestión médica y administrativa del hospital. Acceso seguro para profesionales de la salud.
-                        </div>
-                    </div>
-                    <div class="container5">
-                        <div class="container6">
-                            <div class="container7"><b class="b">24/7</b></div>
-                            <div class="container8"><div class="disponibilidad">Disponibilidad</div></div>
-                        </div>
-                        <div class="container9">
-                            <div class="container7"><b class="b">100%</b></div>
-                            <div class="container8"><div class="disponibilidad">Seguridad</div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Tarjeta de login -->
-            <div class="card">
-                <div class="cardheader">
-                    <img class="hospitallogo-icon" src="imgenes/logoHospital.jpg" alt="Logo del hospital" />
-                    <div class="cardtitle"><div class="b">HOSPITAL NMS</div></div>
-                    <div class="carddescription"><div class="acceso-al-sistema">Acceso al sistema hospitalario</div></div>
-                </div>
+  <main class="login-page">
+    <!-- Panel izquierdo -->
+    <section class="info-panel">
+      <img src="imgenes/HospitalFondo.jpg" alt="Implementos médicos" class="background-img">
+      <div class="info-content">
+        <h1 class="title">Sistema Hospitalario</h1>
+        <p class="description">
+          Plataforma integral para la gestión médica y administrativa del hospital.
+          Acceso seguro para profesionales de la salud.
+        </p>
+      </div>
+    </section>
 
-                <!-- Formulario funcional -->
-                <form id="loginForm" action="loginUsuario" method="post" class="loginform" style="position: relative;">
-                    <div class="container12" style="z-index: 1;">
-                        <label for="correo" class="primitivelabel email-o-usuario">Email</label>
-                        <input type="text" id="correo" name="correo" class="input doctorhospitalnmscom" placeholder="Ejemplo:doctor@gmail.com" required />
-                        <p class="error-message" id="correo-error" style="color: red; display: none;">Por favor, ingrese un correo válido</p>
-                    </div>
+    <!-- Panel derecho (Login) -->
+    <section class="login-card">
+      <div class="card-header">
+        <img src="imgenes/logoHospital.jpg" alt="Logo Hospital" class="hospital-logo">
+        <h2>HOSPITAL NMS</h2>
+        <p>Acceso al sistema hospitalario</p>
+      </div>
 
-                    <div class="container13" style="z-index: 1;">
-                        <label for="contrasena" class="primitivelabel email-o-usuario">Contraseña</label>
-                        <input type="password" id="contrasena" name="contrasena" class="login-hospital-input doctorhospitalnmscom" placeholder="••••••••" required />
-                        <p class="error-message" id="contrasena-error" style="color: red; display: none;">Las credenciales se requieren</p>
-                    </div>
+      <form action="loginUsuario" method="post" class="login-form">
+        <label for="correo">Email</label>
+        <input type="email" id="correo" name="correo" placeholder="Ejemplo: doctor@gmail.com" required>
 
-                    <div class="container15" style="z-index: 1;">
-                        <label class="primitivelabel2">
-                            <input type="checkbox" name="recordar" /> Recordar credenciales
-                        </label>
-                    </div>
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required>
 
-                    <button type="submit" class="button" style="z-index: 1; left: -15px">
-                        <div class="iniciar-sesin">Iniciar Sesión</div>
-                    </button>
-
-                    <div class="login-hospital-button" style="z-index: 1; left: 130px">
-                        <a href="jsp/OlvidarContrasena.jsp" class="recordar-credenciales">¿Olvidaste tu contraseña?</a>
-                    </div>
-
-                    <div class="register-link" style="position: absolute; top: 300px; left: 100px; z-index: 1;">
-                        ¿No tienes cuenta? <a href="jsp/registrarPaciente.jsp">Regístrate</a>
-                    </div>
-                </form>
-            </div>
+        <div class="remember">
+          <input type="checkbox" id="recordar" name="recordar">
+          <label for="recordar">Recordar credenciales</label>
         </div>
-    </div>
 
-    <div class="login-hospital-app">
-        <div class="container16"></div>
-        <div class="container17"></div>
-    </div>
-</div>
+        <button type="submit" class="btn">Iniciar Sesión</button>
+
+        <div class="links">
+          <a href="${pageContext.request.contextPath}/jsp/OlvidarContrasena.jsp">¿Olvidaste tu contraseña?</a>
+          <p>¿No tienes cuenta? <a href="${pageContext.request.contextPath}/jsp/registrarPaciente.jsp">Regístrate</a></p>
+        </div>
+      </form>
+    </section>
+  </main>
 
 <!-- Validación visual -->
 <script>
