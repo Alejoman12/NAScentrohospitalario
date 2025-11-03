@@ -161,6 +161,26 @@ body {
 }
 
 /* ==============================
+   BOTON BUSCAR
+============================== */
+
+input[type="text"] {
+    padding: 8px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 35%;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 8px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+}
+/* ==============================
    TABLA DE REGISTROS
 ============================== */
 .table-section {
