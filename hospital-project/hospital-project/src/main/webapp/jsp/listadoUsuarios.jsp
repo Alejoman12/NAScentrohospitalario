@@ -42,7 +42,7 @@
   <main class="main-content">
 
     <form action="${pageContext.request.contextPath}/listaBusquedaUsuarios" method="get">
-      <input type="text" name="busqueda" placeholder="Buscar..." value="<%= request.getAttribute("busqueda") %>">
+      <input type="text" name="busqueda" placeholder="Buscar..." value="<%= request.getAttribute("busqueda") != null ? request.getAttribute("busqueda") : "" %>">
       <button type="submit">Buscar</button>
     </form>
     

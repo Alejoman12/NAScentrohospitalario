@@ -22,15 +22,15 @@
         <li><img src="${pageContext.request.contextPath}/imgenes/Icono_departamentos.svg" alt="">Departamentos</li>
         <li><img src="${pageContext.request.contextPath}/imgenes/Icono_tablero_tareas.svg" alt="">Tablero Tareas</li>
         <li><img src="${pageContext.request.contextPath}/imgenes/Icono_reportes.svg" alt="">Reportes</li>
-        <a href="${pageContext.request.contextPath}/jsp/listadoUsuarios.jsp"><li><img src="${pageContext.request.contextPath}/imgenes/Icono_listado_usuarios.svg" alt="">Listado Usuarios</li></a>
+        <a href="${pageContext.request.contextPath}/listaBusquedaUsuarios"><li><img src="${pageContext.request.contextPath}/imgenes/Icono_listado_usuarios.svg" alt="">Listado Usuarios</li></a>
         <li><img src="${pageContext.request.contextPath}/imgenes/Icono_perfil_medico.svg" alt="">Perfil Medico</li>
-        <a href="${pageContext.request.contextPath}/jsp/gestionUsuarios.jsp"><li><img src="${pageContext.request.contextPath}/imgenes/Icono_gestionar_usuarios.svg" alt="">Gestionar usuarios</li></a>
+        <a href="${pageContext.request.contextPath}/jsp/gestionUsuarios.jsp"><li><img src="${pageContext.request.contextPath}/imgenes/Icono_gestionar_usuarios.svg" alt="">Gestionar Usuarios</li></a>
         <li><img src="${pageContext.request.contextPath}/imgenes/Icono_configuraciones.svg" alt="">Configuraciones</li>
       </ul>
     </nav>
 
     <div class="logout ">
-    <li><img src="${pageContext.request.contextPath}/imgenes/Icono_cerrar_secion.svg" alt=""><a href="${pageContext.request.contextPath}/index.jsp">Cerrar secíon</a></li>
+    <li><img src="${pageContext.request.contextPath}/imgenes/Icono_cerrar_secion.svg" alt=""><a href="${pageContext.request.contextPath}/cerrarSesion">Cerrar seción</a></li>
   </div>
   </aside>
 
@@ -112,20 +112,6 @@
             <td>CC 10234567</td>
             <td>22/10/2025</td>
             <td>Pediatria</td>
-            <td><span class="estado activo">Activo</span></td>
-          </tr>
-          <tr>
-            <td>Carlos Lopez</td>
-            <td>CC 10098342</td>
-            <td>21/10/2025</td>
-            <td>Urgencias</td>
-            <td><span class="estado inactivo">Inactivo</span></td>
-          </tr>
-          <tr>
-            <td>Laura Torres</td>
-            <td>CC 10456322</td>
-            <td>21/10/2025</td>
-            <td>Medicina general</td>
             <td><span class="estado activo">Activo</span></td>
           </tr>
         </tbody>

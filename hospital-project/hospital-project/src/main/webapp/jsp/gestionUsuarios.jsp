@@ -19,29 +19,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestionar Usuarios</title>
-    <link rel="stylesheet" href="<%= request.getContextPath()%>/css/styles-gestion-usuarios.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles-gestion-usuarios.css">
 </head>
 <body>
-<div class="dashboard">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="logo">
-            <span>Health Care</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Rendimiento Hospital</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Departamentos</a></li>
-                <li><a href="#">Tablero de Tareas</a></li>
-                <li><a href="#">Reportes</a></li>
-                <li><a href="<%=request.getContextPath()%>/listaBusquedaUsuarios">Listado Usuarios</a></li>
-                <li><a href="#">Perfil Médicos</a></li>
-                <li><a href="<%=request.getContextPath()%>/jsp/gestionUsuarios.jsp">Gestionar Usuarios</a></li>
-                <li><a href="#">Configuraciones</a></li>
-            </ul>
-        </nav>
-    </aside>
+
+  <!-- ======= SIDEBAR ======= -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="${pageContext.request.contextPath}/imgenes/logoHospital.jpg" alt="Logo NAS" class="sidebar-logo" />
+      <h1>NAS Centro Hospitalario</h1>
+    </div>
+
+    <nav class="sidebar-menu">
+      <ul>
+        <li><img src="${pageContext.request.contextPath}/imgenes/Icono_dashboard.svg" alt="">Dashboard</li>
+        <li><img src="${pageContext.request.contextPath}/imgenes/Icono_rendimiento_hospital.svg" alt="">Rendimiento Hospital</li>
+        <li><img src="${pageContext.request.contextPath}/imgenes/Icono_departamentos.svg" alt="">Departamentos</li>
+        <li><img src="${pageContext.request.contextPath}/imgenes/Icono_tablero_tareas.svg" alt="">Tablero Tareas</li>
+        <li><img src="${pageContext.request.contextPath}/imgenes/Icono_reportes.svg" alt="">Reportes</li>
+        <a href="${pageContext.request.contextPath}/listaBusquedaUsuarios"><li><img src="${pageContext.request.contextPath}/imgenes/Icono_listado_usuarios.svg" alt="">Listado Usuarios</li></a>
+        <li><img src="${pageContext.request.contextPath}/imgenes/Icono_perfil_medico.svg" alt="">Perfil Medico</li>
+        <a href="${pageContext.request.contextPath}/jsp/gestionUsuarios.jsp"><li class="active"><img src="${pageContext.request.contextPath}/imgenes/Icono_gestionar_usuarios.svg" alt="">Gestionar Usuarios</li></a>
+        <li><img src="${pageContext.request.contextPath}/imgenes/Icono_configuraciones.svg" alt="">Configuraciones</li>
+      </ul>
+    </nav>
+
+    <div class="logout ">
+    <li><img src="${pageContext.request.contextPath}/imgenes/Icono_cerrar_secion.svg" alt=""><a href="${pageContext.request.contextPath}/cerrarSesion">Cerrar seción</a></li>
+  </div>
+  </aside>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -55,7 +61,7 @@
             boolean esEdicion = usuarioEditar != null;
         %>
         <h3><%= esEdicion ? "Editar Usuario" : "Crear Usuario" %></h3>
-        <form class="form" action="<%= request.getContextPath() %>/admin/crearUsuarioDesdeAdmin" method="post">
+        <form class="form" action="${pageContext.request.contextPath}/admin/crearUsuarioDesdeAdmin" method="post">
             <% if (esEdicion) { %>
             <input type="hidden" name="id" value="<%= usuarioEditar.getId() %>">
             <% } %>
@@ -224,6 +230,5 @@
             </table>
         </section>
     </main>
-</div>
 </body>
 </html>
