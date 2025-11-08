@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard - NAS Centro Hospitalario</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles-vista-administrador.css" />
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles-vista-administrador.css">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
         <li><img src="${pageContext.request.contextPath}/imgenes/Icono_reportes.svg" alt="">Reportes</li>
         <a href="${pageContext.request.contextPath}/listaBusquedaUsuarios"><li><img src="${pageContext.request.contextPath}/imgenes/Icono_listado_usuarios.svg" alt="">Listado Usuarios</li></a>
         <li><img src="${pageContext.request.contextPath}/imgenes/Icono_perfil_medico.svg" alt="">Perfil Medico</li>
-        <a href="${pageContext.request.contextPath}/jsp/gestionUsuarios.jsp"><li><img src="${pageContext.request.contextPath}/imgenes/Icono_gestionar_usuarios.svg" alt="">Gestionar Usuarios</li></a>
+        <a href="${pageContext.request.contextPath}/listarUsuarios"><li><img src="${pageContext.request.contextPath}/imgenes/Icono_gestionar_usuarios.svg" alt="">Gestionar Usuarios</li></a>
         <li><img src="${pageContext.request.contextPath}/imgenes/Icono_configuraciones.svg" alt="">Configuraciones</li>
       </ul>
     </nav>
