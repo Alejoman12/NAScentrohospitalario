@@ -3,10 +3,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Hospital NMS - Iniciar Sesión</title>
+    <title>Hospital NAS - Iniciar Sesión</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index-styles.css">
+    <link rel="icon" href="imgenes/logoHospital.jpg">
 </head>
 <body>
 
@@ -18,7 +19,7 @@
         <div class="info-content">
             <h1 class="system-title">
                 <img src="imgenes/logoHospital.jpg" alt="Logo Hospital" class="logo-icon">
-                Sistema Hospitalario NMS
+                Sistema Hospitalario NAS
             </h1>
 
             <p class="system-description">
@@ -38,13 +39,13 @@
     <!-- Sección derecha -->
     <section class="form-section">
         <div class="login-card">
-            <img src="imgenes/logoHospital.jpg" alt="Logo NMS" class="login-logo">
-            <h2 class="hospital-name">Hospital NMS</h2>
+            <img src="imgenes/logoHospital.jpg" alt="Logo NAS" class="login-logo">
+            <h2 class="hospital-name">Hospital NAS</h2>
             <p class="login-subtitle">Portal de acceso seguro</p>
 
             <form id="loginForm" action="loginUsuario" method="post" class="login-form">
                 <label for="correo" class="form-label">Correo electrónico</label>
-                <input type="text" id="correo" name="correo" placeholder="doctor@hospitalnms.com" required class="form-input">
+                <input type="text" id="correo" name="correo" placeholder="doctor@hospitalnas.com" required class="form-input">
 
                 <label for="contrasena" class="form-label">Contraseña</label>
                 <input type="password" id="contrasena" name="contrasena" placeholder="••••••••" required class="form-input">
