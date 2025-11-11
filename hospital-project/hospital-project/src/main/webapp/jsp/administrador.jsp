@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,7 +31,7 @@
     </nav>
 
     <div class="logout ">
-    <li><img src="${pageContext.request.contextPath}/imgenes/Icono_cerrar_secion.svg" alt=""><a href="${pageContext.request.contextPath}/cerrarSesion">Cerrar seción</a></li>
+    <a href="${pageContext.request.contextPath}/cerrarSesion"><li><img src="${pageContext.request.contextPath}/imgenes/Icono_cerrar_secion.svg" alt="">Cerrar secion</li></a>
   </div>
   </aside>
 

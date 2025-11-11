@@ -28,6 +28,13 @@
       <version>8.0.33</version> <!-- o la versión más reciente -->
     </dependency>
 
+    <dependency>
+    <groupId>com.sun.mail</groupId>
+    <artifactId>jakarta.mail</artifactId>
+    <version>2.0.1</version>
+    </dependency>
+
+
   </dependencies>
 <build>
     <finalName>hospital-project</finalName>
@@ -39,9 +46,21 @@
             <configuration>
                 <httpPort>8080</httpPort>
                 <contextPath>/</contextPath>
-                <scanIntervalSeconds>5</scanIntervalSeconds>
-            </configuration>
-        </plugin>
+
+
+        <scanIntervalSeconds>5</scanIntervalSeconds>
+        <reload>automatic</reload>
+
+
+        <useTestClasspath>true</useTestClasspath>
+        <webApp>
+            <contextPath>/</contextPath>
+            <copyWebInf>false</copyWebInf>
+            <copyWebDir>false</copyWebDir>
+        </webApp>
+    </configuration>
+</plugin>
+
     </plugins>
 </build> 
 </project>

@@ -188,4 +188,44 @@ public class UsuarioDAO {
         return lista;
     }
 
+    public Usuario buscarPorCorreo(String correo) throws SQLException {
+        String query = "SELECT * FROM usuario WHERE correo = ?";
+        SQL sql = new SQL();
+        sql.connectDatabase();
+        Connection conn = sql.getConnection();
+
+        try {
+            stmt = conn.prepareStatement(query);
+            stmt.setString(1, correo);
+            rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                Usuario usuario = new Usuario();
+                usuario.setId(rs.getInt("id_usuario"));
+                usuario.setNombre(rs.getString("nombre"));
+                usuario.setCorreo(rs.getString("correo"));
+                usuario.setContrasena(rs.getString("contrasena"));
+                usuario.setRol(rs.getString("rol"));
+                usuario.setActivo(rs.getBoolean("activo"));
+                usuario.setPregunta(rs.getString("pregunta"));
+                usuario.setRespuesta(rs.getString("respuesta"));
+                return usuario;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sql.disconnectDatabase();
+        }
+        return null;
+    }
+
+
+    public void guardarTokenRecuperacion(int idUsuario, String token) throws SQLException {
+    String sql = "UPDATE usuario SET token_recuperacion = ?, token_expira = DATE_ADD(NOW(), INTERVAL 10 MINUTE) WHERE id_usuario = ?";
+    PreparedStatement stmt = conn.prepareStatement(sql);
+    stmt.setString(1, token);
+    stmt.setInt(2, idUsuario);
+    stmt.executeUpdate();
+    }
 }
