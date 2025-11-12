@@ -17,16 +17,12 @@ public class CrearUsuarioDesdeAdminServlet extends HttpServlet {
         String correo = request.getParameter("correo");
         String contrasena = request.getParameter("contrasena");
         String rol = request.getParameter("rol");
-        String pregunta = request.getParameter("pregunta");
-        String respuesta = request.getParameter("respuesta");
 
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
         usuario.setCorreo(correo);
         usuario.setContrasena(contrasena);
         usuario.setRol(rol);
-        usuario.setPregunta(pregunta);
-        usuario.setRespuesta(respuesta);
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         int idGenerado = usuarioDAO.insertarUsuario(usuario);

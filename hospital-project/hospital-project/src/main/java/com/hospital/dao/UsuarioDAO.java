@@ -25,7 +25,7 @@ public class UsuarioDAO {
         System.out.println("Insertando usuario");
 
         int idGenerado = 0;
-        String query = "INSERT INTO usuario (nombre, correo, contrasena, rol, pregunta, respuesta) VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO usuario (nombre, correo, contrasena, rol) VALUES (?, ?, ?, ?)";
 
         SQL sql = new SQL();
         sql.connectDatabase();
@@ -37,8 +37,6 @@ public class UsuarioDAO {
             stmt.setString(2, usuario.getCorreo());
             stmt.setString(3, usuario.getContrasena());
             stmt.setString(4, usuario.getRol());
-            stmt.setString(5, usuario.getPregunta());
-            stmt.setString(6, usuario.getRespuesta());
             int rows = stmt.executeUpdate();
 
             if (rows > 0) {
@@ -81,8 +79,6 @@ public class UsuarioDAO {
                 usuario.setContrasena(rs.getString("contrasena"));
                 usuario.setRol(rs.getString("rol"));
                 usuario.setActivo(rs.getBoolean("activo"));
-                usuario.setPregunta(rs.getString("pregunta"));
-                usuario.setRespuesta(rs.getString("respuesta"));
                 return usuario;
             }
 
@@ -95,7 +91,7 @@ public class UsuarioDAO {
     }
 
     public void actualizarUsuario(Usuario usuario) {
-        String query = "UPDATE usuario SET nombre = ?, correo = ?, contrasena = ?, rol = ? WHERE id_usuario = ?, pregunta = ?, respuesta = ?";
+        String query = "UPDATE usuario SET nombre = ?, correo = ?, contrasena = ?, rol = ? WHERE id_usuario = ?";
 
         SQL sql = new SQL();
         sql.connectDatabase(); // ¡IMPORTANTE!
@@ -107,8 +103,6 @@ public class UsuarioDAO {
             stmt.setString(3, usuario.getContrasena());
             stmt.setString(4, usuario.getRol());
             stmt.setInt(5, usuario.getId());
-            stmt.setString(6, usuario.getPregunta());
-            stmt.setString(7, usuario.getRespuesta());
 
             stmt.executeUpdate();
         } catch (SQLException e) {
@@ -207,8 +201,6 @@ public class UsuarioDAO {
                 usuario.setContrasena(rs.getString("contrasena"));
                 usuario.setRol(rs.getString("rol"));
                 usuario.setActivo(rs.getBoolean("activo"));
-                usuario.setPregunta(rs.getString("pregunta"));
-                usuario.setRespuesta(rs.getString("respuesta"));
                 return usuario;
             }
 

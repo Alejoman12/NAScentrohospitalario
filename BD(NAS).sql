@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS `cita` (
   CONSTRAINT `FK_cita_paciente` FOREIGN KEY (`id_paciente`) REFERENCES `paciente` (`id_paciente`) ON DELETE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla hospital_management.cita: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla hospital_management.cita: ~1 rows (aproximadamente)
 INSERT INTO `cita` (`id_cita`, `id_paciente`, `id_medico`, `fecha_hora`, `motivo`, `estado`, `activo`) VALUES
 	(3, 'PAC-49', 'MED-48', '2025-10-12 12:04:00', 'Dolor de barriga', 'Pendiente', 1);
 
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `medico` (
   CONSTRAINT `FK_medico_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla hospital_management.medico: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla hospital_management.medico: ~1 rows (aproximadamente)
 INSERT INTO `medico` (`id_medico`, `id_usuario`, `especialidad`, `telefono`, `activo`) VALUES
 	('MED-48', 48, 'piedrata', '3100', 1);
 
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `paciente` (
   CONSTRAINT `paciente_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla hospital_management.paciente: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla hospital_management.paciente: ~1 rows (aproximadamente)
 INSERT INTO `paciente` (`id_paciente`, `id_usuario`, `id_medico`, `documento_identidad`, `fecha_nacimiento`, `genero`, `direccion`, `telefono`, `correo`, `activo`) VALUES
 	('PAC-49', 49, NULL, '1112390195', '2000-04-12', 'Masculino', 'calle 12', '3101234', 'alejandro@gmail.com', 1);
 
@@ -119,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `recepcionista` (
   CONSTRAINT `recepcionista_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla hospital_management.recepcionista: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla hospital_management.recepcionista: ~1 rows (aproximadamente)
 INSERT INTO `recepcionista` (`id_recepcionista`, `id_usuario`, `turno`, `telefono`, `activo`) VALUES
 	('REP-50', 50, 'Tarde', '310120310', 0);
 
@@ -131,18 +131,16 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `contrasena` varchar(100) NOT NULL,
   `rol` enum('Administrador','Recepcionista','Paciente','Medico') NOT NULL,
   `activo` tinyint(1) DEFAULT 1,
-  `pregunta` varchar(100) NOT NULL,
-  `respuesta` varchar(100) NOT NULL,
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `correo` (`correo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla hospital_management.usuario: ~4 rows (aproximadamente)
-INSERT INTO `usuario` (`id_usuario`, `nombre`, `correo`, `contrasena`, `rol`, `activo`, `pregunta`, `respuesta`) VALUES
-	(26, 'samir alenadro', 'samir@gmail.com', '12345', 'Administrador', 1, '', ''),
-	(48, 'nicolas cardona', 'nicolas@gmail.com', '1234', 'Medico', 1, '', ''),
-	(49, 'alejandro manzano', 'alejandro@gmail.com', '123', 'Paciente', 1, '', ''),
-	(50, 'sebastian corredor', 'sebastian@gmail.com', '1234', 'Recepcionista', 1, '', '');
+INSERT INTO `usuario` (`id_usuario`, `nombre`, `correo`, `contrasena`, `rol`, `activo`) VALUES
+	(26, 'samir alenadro', 'samir@gmail.com', '12345', 'Administrador', 1),
+	(48, 'nicolas cardona', 'nicolas@gmail.com', '1234', 'Medico', 1),
+	(49, 'alejandro manzano', 'alejandro@gmail.com', '123', 'Paciente', 1),
+	(50, 'sebastian corredor', 'sebastian@gmail.com', '1234', 'Recepcionista', 1);
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

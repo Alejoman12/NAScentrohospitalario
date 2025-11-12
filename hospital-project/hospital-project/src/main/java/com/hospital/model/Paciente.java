@@ -16,8 +16,8 @@ public class Paciente extends Usuario {
         super();
     }
 
-    public Paciente(int id, String nombre, String correo, String contrasena, boolean activo, String pregunta, String respuesta, String idPaciente, String direccion, String telefono, LocalDate fechaNacimiento, String genero, String idMedico, String documentoIdentidad) {
-        super(id, nombre, correo, contrasena, "Paciente", activo, pregunta, respuesta);
+    public Paciente(int id, String nombre, String correo, String contrasena, boolean activo, String idPaciente, String direccion, String telefono, LocalDate fechaNacimiento, String genero, String idMedico, String documentoIdentidad) {
+        super(id, nombre, correo, contrasena, "Paciente", activo);
         this.idPaciente = idPaciente;
         this.direccion = direccion;
         this.telefono = telefono;

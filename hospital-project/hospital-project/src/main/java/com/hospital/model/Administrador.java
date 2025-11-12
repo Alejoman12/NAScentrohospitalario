@@ -6,8 +6,8 @@ public class Administrador extends Usuario {
     private String telefono;
 
 
-    public Administrador(int id, String idAdminsitrador, String nombre, String correo, String contrasena, boolean activo, String pregunta, String respuesta, String telefono) {
-        super(id, nombre, correo, contrasena, "Administrador", activo, pregunta, respuesta);
+    public Administrador(int id, String idAdminsitrador, String nombre, String correo, String contrasena, boolean activo, String telefono) {
+        super(id, nombre, correo, contrasena, "Administrador", activo);
         this.idAdminsitrador = idAdminsitrador;
         this.telefono = telefono;
 
