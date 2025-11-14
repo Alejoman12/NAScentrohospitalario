@@ -16,7 +16,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Mis Citas</title>
-    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/styles-mis-citas.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/css/styles-actualizar-paciente.css">
 </head>
 <body>
 <div class="container">

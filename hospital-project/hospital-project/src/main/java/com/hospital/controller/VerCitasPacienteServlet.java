@@ -29,6 +29,6 @@ public class VerCitasPacienteServlet extends HttpServlet {
         List<Cita> citas = citaDAO.obtenerCitasPorPaciente(paciente.getIdPaciente());
 
         req.setAttribute("citas", citas);
-        req.getRequestDispatcher("/jsp/pacienteCitas.jsp").forward(req, resp);
+        req.getRequestDispatcher("/jsp/pacienteActua.jsp").forward(req, resp);
     }
 }
