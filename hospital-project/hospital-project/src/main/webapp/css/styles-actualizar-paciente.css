@@ -1,67 +1,191 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f3f6fa;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
+:root{
+    --bg:#f8fafb;
+    --sidebar:#030213;
+    --accent:#3dd5d9;
+    --muted:#6a7282;
+    --danger-start:#fb2c36;
+    --danger-end:#e7000b;
+    --radius:12px;
+    --max-width:1100px;
 }
 
-form {
-    background: #fff;
-    padding: 30px 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 500px;
+/* base */
+*{box-sizing:border-box}
+body{margin:0;font-family:Arimo, system-ui, sans-serif;background:var(--bg);color:#111}
+
+/* layout root */
+.app-root{display:flex;min-height:100vh;gap:0}
+
+/* Sidebar */
+.sidebar{
+    width:260px;
+    background:var(--sidebar);
+    color:#fff;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    flex-shrink:0;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brand__img{width:44px;height:44px;border-radius:8px}
+.brand__title{font-size:20px;margin:0}
+
+.nav{display:flex;flex-direction:column;gap:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;padding:10px 14px;border-radius:8px;font-weight:600;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease}
+.btn:focus{outline:3px solid rgba(61,213,217,.2)}
+.btn--ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.06)}
+.btn--primary{background:var(--accent);color:#030213}
+.btn--danger{background:linear-gradient(180deg,var(--danger-start),var(--danger-end));color:#fff}
+.btn--large{padding:14px 20px;border-radius:14px}
+.btn:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,.12)}
+
+.sidebar__user{margin-top:auto;display:flex;align-items:center;gap:12px}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+.user__name{font-weight:700}
+.user__email{font-size:13px;color:rgba(255,255,255,.7)}
+
+/* Main content */
+.content{flex:1;padding:28px;max-width:var(--max-width);margin:0 auto}
+.content__header{display:flex;align-items:flex-start;gap:24px;flex-wrap:wrap}
+.accent{width:8px;height:56px;background:linear-gradient(180deg,var(--accent),#00d9a3);border-radius:8px;box-shadow:0 10px 20px rgba(0,217,163,.08)}
+.content__header h2{margin:0}
+.muted{color:var(--muted);margin:6px 0}
+
+/* summary cards right area */
+.summary-cards{display:flex;gap:16px;margin-left:auto;align-items:flex-start;flex-wrap:wrap}
+.card{width:300px;padding:18px;border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.04);box-shadow:0 10px 18px rgba(0,0,0,.06)}
+.card--secure{background:linear-gradient(135deg, rgba(61,213,217,.06), rgba(61,213,217,.02));border:1px solid rgba(61,213,217,.2)}
+.card__icon{width:44px;height:44px;border-radius:10px;background:#fff}
+.profile-stats{display:flex;flex-direction:column;gap:8px}
+.stat{display:flex;justify-content:space-between;align-items:center}
+.status{padding:6px 10px;border-radius:999px;color:#fff}
+.status--active{background:var(--accent);color:#030213}
+
+/* Main panel */
+.panel{margin-top:26px;display:flex;justify-content:flex-start;gap:24px;align-items:flex-start;flex-wrap:wrap}
+
+/* big left edit card (matches your mock) */
+.panel .card{flex:1;min-width:320px;max-width:720px;padding:26px;position:relative;border-radius:16px}
+
+/* Header inside card */
+.app6{display:flex;align-items:center;gap:16px}
+.container-icon3{width:52px;height:52px;border-radius:12px}
+.heading-3{margin:0 0 6px 0}
+.paragraph5{margin:0;color:var(--muted)}
+
+/* Fields list */
+.app7{margin-top:18px;display:flex;flex-direction:column;gap:14px}
+
+/* each field container */
+.container22,.container25,.container26{background:transparent}
+
+/* label row */
+.list-item{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.container-icon4{width:40px;height:40px}
+
+/* Input-like card wrapper */
+.app9{
+    background:#fff;
+    border:1px solid rgba(0,0,0,.04);
+    border-radius:12px;
+    padding:12px 12px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 10px 18px rgba(0,0,0,.04);
+    min-height:52px;
+    gap:12px;
 }
 
-h2 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 25px;
+/* text area where we place input - visually same as previous card */
+.text-input, .phone-input {
+    flex:1;
+    display:flex;
+    align-items:center;
+    gap:12px;
 }
 
-label {
-    display: block;
-    margin-bottom: 6px;
-    font-weight: bold;
-    color: #444;
+/* inputs styled to blend like the card */
+.text-input input, .phone-input input {
+    width:100%;
+    border:0;
+    background:transparent;
+    font-size:15px;
+    color:#111;
+    outline:none;
+    padding:6px 8px;
+    font-family:inherit;
 }
 
-input[type="text"],
-input[type="email"],
-select {
-    width: 100%;
-    padding: 10px 12px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 15px;
-    transition: border 0.3s;
+/* when input empty show muted text - using placeholder */
+.text-input input::placeholder, .phone-input input::placeholder {
+    color:var(--muted);
 }
 
-input:focus,
-select:focus {
-    border-color: #3b82f6;
-    outline: none;
+/* right-side confirm icon */
+.container-icon5, .container-icon9 {
+    width:40px;height:40px;
 }
 
-input[type="submit"] {
-    background: #3b82f6;
-    color: white;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+/* phone and email small layout */
+.container24{display:flex;gap:16px;flex-wrap:wrap}
+.container25,.container26{flex:1;min-width:220px}
+
+/* button area */
+.button4{display:flex;justify-content:flex-start}
+.actualizar-informacin{margin-left:10px;font-weight:700}
+
+/* small helper for icons inside input if needed (not altering images) */
+.input-icon {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:36px;
+    height:36px;
+    border-radius:10px;
+    background:transparent;
 }
 
-input[type="submit"]:hover {
-    background: #2563eb;
+/* tips list */
+.tips{margin:0;padding-left:18px;color:var(--muted)}
+
+/* responsive rules */
+
+/* medium screens: reduce right column card widths and center content */
+@media (max-width:1200px){
+    .content{padding:20px;max-width:1000px}
+    .card{width:260px}
+    .summary-cards{gap:12px}
+}
+
+/* small screens: stack everything vertically, sidebar becomes top bar */
+@media (max-width:880px){
+    .app-root{flex-direction:column}
+    .sidebar{
+        width:100%;
+        height:auto;
+        flex-direction:row;
+        align-items:center;
+        padding:12px 16px;
+        gap:12px;
+    }
+    .sidebar__user{margin-left:auto}
+    .content{padding:16px;max-width:100%}
+    .content__header{align-items:center}
+    .summary-cards{order:3;margin:8px 0 0 0;justify-content:flex-start}
+    .panel{flex-direction:column;gap:18px}
+    .panel .card{max-width:100%}
+    .app9{min-height:56px}
+    .container24{flex-direction:column}
+}
+
+/* extra small: ensure touch sizes */
+@media (max-width:480px){
+    .brand__title{font-size:18px}
+    .accent{height:44px}
+    .card{padding:14px}
+    .app9{padding:10px}
+    .btn{padding:10px 12px}
+    .btn--large{padding:12px 14px}
 }
