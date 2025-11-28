@@ -14,10 +14,24 @@ import java.io.IOException;
 
 @WebServlet("/actualizarPaciente")
 public class ActualizarPacienteServlet extends HttpServlet {
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession(false);
+
+        if (session == null) {
+            response.sendRedirect("index.jsp");
+            return;
+        }
+
         Usuario usuario = (Usuario) session.getAttribute("usuario");
 
+        if (usuario == null) {
+            response.sendRedirect("index.jsp");
+            return;
+        }
+
+        // Obtener parámetros del formulario
         String nombre = request.getParameter("nombre");
         String direccion = request.getParameter("direccion");
         String telefono = request.getParameter("telefono");
@@ -28,21 +42,28 @@ public class ActualizarPacienteServlet extends HttpServlet {
         usuario.setNombre(nombre);
         usuario.setCorreo(correo);
 
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        usuarioDAO.actualizarUsuario(usuario);
+
         // Actualizar en Paciente
         PacienteDAO pacienteDAO = new PacienteDAO();
         Paciente paciente = pacienteDAO.obtenerPorId(usuario.getId());
-        paciente.setDireccion(direccion);
-        paciente.setTelefono(telefono);
-        paciente.setGenero(genero);
-        paciente.setCorreo(correo);
 
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
-        usuarioDAO.actualizarUsuario(usuario);
-        pacienteDAO.actualizarPaciente(paciente);
+        if (paciente != null) {
+            paciente.setNombre(nombre);     // ← ← ← CORRECCIÓN IMPORTANTE
+            paciente.setDireccion(direccion);
+            paciente.setTelefono(telefono);
+            paciente.setGenero(genero);
+            paciente.setCorreo(correo);
 
+            pacienteDAO.actualizarPaciente(paciente);
+            session.setAttribute("paciente", paciente);
+        }
+
+        // Guardar cambios en sesión
         session.setAttribute("usuario", usuario);
-        session.setAttribute("paciente", paciente);
 
-        response.sendRedirect("jsp/paciente.jsp");
+        // Redirigir a la vista actualizada
+        response.sendRedirect("jsp/pacienteActua.jsp");
     }
 }
