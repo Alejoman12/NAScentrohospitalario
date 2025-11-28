@@ -29,9 +29,12 @@
 
         <nav>
             <ul>
-                <li><a href="#"><img src="../imgenes/IconAgenda.svg" class="icono-menu" alt="">Citas del día</a></li>
-                <li><a href="#"><img src="../imgenes/IconHistorialPaciente.svg" class="icono-menu" alt="">Historial de pacientes</a></li>
-                <li><a href="#"><img src="../imgenes/IconDianostico.svg" class="icono-menu" alt="">Registrar diagnóstico</a></li>
+                <li><a href="<%= request.getContextPath() %>/jsp/CitasDelDiaMedico.jsp">
+                    <img src="../imgenes/IconAgenda.svg" class="icono-menu" alt=""> Citas del día</a></li>
+                <li><a href="<%=request.getContextPath()%>/jsp/HistorialPacienteMedico.jsp">
+                    <img src="../imgenes/IconHistorialPaciente.svg" class="icono-menu" alt="">Historial de pacientes</a></li>
+                <li><a href="<%=request.getContextPath()%>/jsp/registrarDianostico.jsp">
+                    <img src="../imgenes/IconDianostico.svg" class="icono-menu" alt="">Registrar diagnóstico</a></li>
                 <li><a href="<%=request.getContextPath()%>/jsp/actualizarMedico.jsp">
                     <img src="../imgenes/IconTuerca.svg" class="icono-menu" alt="">Actualizar datos</a></li>
             </ul>

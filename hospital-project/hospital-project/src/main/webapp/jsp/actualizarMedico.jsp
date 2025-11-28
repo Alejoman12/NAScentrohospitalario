@@ -17,35 +17,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualizar Datos del Médico</title>
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/styles-Medico.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <div class="dashboard">
-    <!-- Sidebar -->
+
     <aside class="sidebar">
-        <h1><img src="../imgenes/IconMedico.svg" class="icono-logo" alt=""> Médico</h1>
+        <h1><img src="../imgenes/IconMedico.svg" alt="Medico" class="icono-logo"> Medico</h1>
 
         <nav>
             <ul>
-                <li><a href="#"><img src="../imgenes/IconAgenda.svg" class="icono-menu" alt="">Citas del día</a></li>
-                <li><a href="#"><img src="../imgenes/IconHistorialPaciente.svg" class="icono-menu" alt="">Historial de pacientes</a></li>
-                <li><a href="#"><img src="../imgenes/IconDianostico.svg" class="icono-menu" alt="">Registrar diagnóstico</a></li>
-                <li><a href="#" class="active"><img src="../imgenes/IconTuerca.svg" class="icono-menu" alt="">Actualizar datos</a></li>
+                <li><a href="<%= request.getContextPath() %>/jsp/CitasDelDiaMedico.jsp">
+                    <img src="../imgenes/IconAgenda.svg" class="icono-menu" alt=""> Citas del día</a></li>
+                <li><a href="<%=request.getContextPath()%>/jsp/HistorialPacienteMedico.jsp">
+                    <img src="../imgenes/IconHistorialPaciente.svg" class="icono-menu" alt="">Historial de pacientes</a></li>
+                <li><a href="<%=request.getContextPath()%>/jsp/registrarDianostico.jsp">
+                    <img src="../imgenes/IconDianostico.svg" class="icono-menu" alt="">Registrar diagnóstico</a></li>
+                <li><a href="<%=request.getContextPath()%>/jsp/actualizarMedico.jsp">
+                    <img src="../imgenes/IconTuerca.svg" class="icono-menu" alt="">Actualizar datos</a></li>
             </ul>
         </nav>
 
         <form action="<%= request.getContextPath() %>/index.jsp" method="post">
             <button type="submit" class="logout-btn">
-                <img src="../imgenes/IconFlechaIzquierda.svg" class="icono-menu" alt=""> Cerrar sesión
+                <img src="../imgenes/IconFlechaIzquierda.svg" class="icono-menu" alt="Cerrar sesion">
+                Cerrar sesión
             </button>
         </form>
     </aside>
 
-    <!-- Contenido principal -->
     <main class="contenido-principal">
+
         <div class="formulario-container">
             <h2>Actualizar Información Personal</h2>
+
             <form method="post" action="<%= request.getContextPath() %>/actualizarMedico" class="formulario">
+
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" value="<%= usuario.getNombre() %>" required>
 
@@ -61,6 +69,7 @@
                 <button type="submit" class="btn-actualizar">Actualizar Datos</button>
             </form>
         </div>
+
     </main>
 </div>
 

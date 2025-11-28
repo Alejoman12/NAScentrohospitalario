@@ -57,5 +57,44 @@ public class CitaDAO {
 
         return lista;
     }
+    public List<Cita> obtenerCitasPendientesPorMedico(String idMedico) {
+        List<Cita> lista = new ArrayList<>();
+        String query = "SELECT * FROM cita WHERE id_medico = ? AND estado = 'Pendiente' ORDER BY fecha_hora ASC";
+
+        SQL sql = new SQL();
+        sql.connectDatabase();
+
+        try (PreparedStatement stmt = sql.getConnection().prepareStatement(query)) {
+            stmt.setString(1, idMedico);
+            System.out.println("Buscando citas PENDIENTES del médico: " + idMedico);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                Cita cita = new Cita();
+                cita.setIdCita(rs.getInt("id_cita"));
+                cita.setIdPaciente(rs.getString("idPaciente"));
+                cita.setIdMedico(rs.getString("id_medico"));
+                cita.setFechaHora(rs.getString("fecha_hora"));
+                cita.setMotivo(rs.getString("motivo"));
+                cita.setEstado(rs.getString("estado"));
+
+                lista.add(cita);
+
+                System.out.println("CITA ENCONTRADA: " + cita.getIdCita() + " - " + cita.getEstado());
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sql.disconnectDatabase();
+        }
+
+        System.out.println("TOTAL CITAS ENCONTRADAS: " + lista.size());
+        return lista;
+    }
+
+
+
 
 }
