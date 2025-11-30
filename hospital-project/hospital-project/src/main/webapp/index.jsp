@@ -41,7 +41,7 @@
     <section class="form-section">
         <div class="login-card">
             <img src="imgenes/logoHospital.jpg" alt="Logo NAS" class="login-logo">
-            <h2 class="hospital-name">Hospital NAS</h2>
+            <h2 class="hospital-name">CENTRO HOSPITALARIO</h2>
             <p class="login-subtitle">Portal de acceso seguro</p>
 
             <form id="loginForm" action="loginUsuario" method="post" class="login-form">

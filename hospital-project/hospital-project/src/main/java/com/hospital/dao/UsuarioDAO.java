@@ -214,10 +214,51 @@ public class UsuarioDAO {
 
 
     public void guardarTokenRecuperacion(int idUsuario, String token) throws SQLException {
-    String sql = "UPDATE usuario SET token_recuperacion = ?, token_expira = DATE_ADD(NOW(), INTERVAL 10 MINUTE) WHERE id_usuario = ?";
-    PreparedStatement stmt = conn.prepareStatement(sql);
-    stmt.setString(1, token);
-    stmt.setInt(2, idUsuario);
-    stmt.executeUpdate();
+            String sql = "UPDATE usuario SET token_recuperacion = ?, token_expira = DATE_ADD(NOW(), INTERVAL 10 MINUTE) WHERE id_usuario = ?";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.setString(1, token);
+            stmt.setInt(2, idUsuario);
+            stmt.executeUpdate();
+            }
+
+            public Usuario buscarPorToken(String token) throws SQLException {
+                String query = "SELECT * FROM usuario WHERE token_recuperacion = ? AND token_expira > NOW()";
+                PreparedStatement stmt = conn.prepareStatement(query);
+                stmt.setString(1, token);
+                rs = stmt.executeQuery();
+
+                if (rs.next()) {
+                    Usuario u = new Usuario();
+                    u.setId(rs.getInt("id_usuario"));
+                    u.setCorreo(rs.getString("correo"));
+                    return u;
+            }
+            return null;
     }
+
+
+public boolean tokenValido(Usuario usuario) {
+    boolean valido = false;
+    String sql = "SELECT token_expira FROM usuario WHERE id_usuario = ?";
+
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setInt(1, usuario.getId());
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            java.sql.Timestamp expiracion = rs.getTimestamp("token_expira");
+            java.sql.Timestamp ahora = new java.sql.Timestamp(System.currentTimeMillis());
+
+            // El token es válido si aún no ha vencido
+            if (expiracion != null && expiracion.after(ahora)) {
+                valido = true;
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+
+    return valido;
+}
+
 }

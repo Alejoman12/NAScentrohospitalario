@@ -23,7 +23,7 @@ public class RecuperarContrasenaServlet extends HttpServlet {
 
         String correo = request.getParameter("correo");
 
-        // 🔹 AQUÍ es donde va el bloque que mencionas
+        
         SQL sql = new SQL();
         sql.connectDatabase();
 
@@ -37,7 +37,7 @@ public class RecuperarContrasenaServlet extends HttpServlet {
                 dao.guardarTokenRecuperacion(usuario.getId(), token);
 
                 // Crear enlace
-                String enlace = "http://localhost:8080/hospital/cambiarContrasena?token=" + token;
+                String enlace = "http://localhost:8080/verificarToken?token=" + token;
 
                 // Crear cuerpo del mensaje
                 String cuerpo = "Hola " + usuario.getNombre() +
@@ -48,7 +48,7 @@ public class RecuperarContrasenaServlet extends HttpServlet {
                 EmailSender.enviarCorreo(correo, "Recuperar contraseña", cuerpo);
 
                 // Redirigir a confirmación
-                response.sendRedirect("jsp/mensajeEnviado.jsp");
+                response.sendRedirect(request.getContextPath() + "/jsp/ConfirmacionMensaje.jsp");
             } else {
                 // Si el correo no existe
                 request.setAttribute("error", "No existe una cuenta con ese correo.");

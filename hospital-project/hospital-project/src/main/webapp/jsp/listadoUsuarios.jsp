@@ -34,7 +34,7 @@
     </nav>
 
     <div class="logout ">
-    <li><img src="${pageContext.request.contextPath}/imgenes/Icono_cerrar_secion.svg" alt=""><a href="${pageContext.request.contextPath}/index.jsp">Cerrar sesión</a></li>
+    <a href="${pageContext.request.contextPath}/CerrarSesionServlet.java"><li><img src="${pageContext.request.contextPath}/imgenes/Icono_cerrar_secion.svg" alt="">Cerrar sesión</li></a>
   </div>
   </aside>
 
