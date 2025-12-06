@@ -1,60 +1,137 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    padding: 30px;
+/* styles-agendar-cita.css - versión optimizada */
+/* Conserva colores y tipografía (Arimo) que tenías */
+:root{
+    --bg:#fff;
+    --accent1:#51a2ff;
+    --accent2:#3d8ceb;
+    --accent3:#2878d9;
+    --muted:#6c757d;
+    --input-bg:#f8f9fa;
+    --input-border:#e5e7eb;
+    --dark:#030213;
+    --text-dark:#0a0a0a;
+    --white-rgba: rgba(255,255,255,.95);
+    --font: Arimo;
+    font-family: Arimo, sans-serif;
 }
 
-.container {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    max-width: 500px;
-    width: 100%;
+/* Reset y layout base */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);font-family:var(--font,Arimo),sans-serif}
+.formulario-de-agendar-cita{
+    display:flex;
+    min-height:100vh;
+    color:var(--text-dark);
+    position:relative;
+    overflow:hidden;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: #333;
+/* Sidebar (la tuya de 256px) */
+.container33{
+    width:256px;
+    min-width:256px;
+    background:var(--dark);
+    color:#fff;
+    box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.08);
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    padding-bottom:16px;
+}
+.container34{display:flex;align-items:center;padding:16px;gap:12px}
+.container34 img{width:40px;height:40px;border-radius:8px}
+.heading-22 .recepcionista{font-size:20px;line-height:1}
+.list{padding:12px;display:flex;flex-direction:column;gap:8px}
+.list .button2,
+.list .button3,
+.list .button5{
+    display:flex;align-items:center;gap:12px;padding:8px 12px;border-radius:8px;border:0;cursor:pointer;width:100%;
+    font-size:14px;text-align:left;background:transparent;color:#fff;
+}
+.list .button2{background:linear-gradient(90deg,var(--accent1),var(--accent2))}
+.list .button5{background:#ff0000;color:#fff}
+.container35{margin-top:auto;padding:16px;border-top:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;gap:12px}
+.primitivespan2{width:40px;height:40px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--accent1),var(--accent2))}
+
+/* Área principal */
+.main-area{flex:1;display:flex;align-items:flex-start;justify-content:center;padding:40px;gap:24px}
+.hero-card{
+    width:1200px;max-width:calc(100% - 48px);border-radius:24px;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);background:#fff;display:flex;overflow:hidden;
 }
 
-.form-group {
-    margin-bottom: 15px;
+/* Left visual column (imagen con overlay) */
+.left-visual{
+    width:600px;min-width:280px;position:relative;
+}
+.left-visual img.imagewithfallback-icon{width:100%;height:100%;object-fit:cover;display:block}
+.left-visual .overlay{
+    position:absolute;inset:0;background:linear-gradient(135deg, rgba(0,0,0,.6), rgba(0,0,0,.5) 50%, rgba(0,0,0,.7));padding:48px;color:#fff;display:flex;flex-direction:column;justify-content:flex-start;gap:18px;
+}
+.left-visual .heading-3{font-size:32px;font-weight:600}
+.left-visual .paragraph2,.left-visual .paragraph3{color:var(--white-rgba);font-size:14px}
+.left-visual .feature{background:rgba(255,255,255,.08);border-radius:10px;padding:12px;display:flex;gap:12px;align-items:center}
+
+/* Right form column */
+.right-form{flex:1;padding:48px;display:flex;flex-direction:column;gap:20px;min-width:300px}
+.right-form .title{font-size:20px;font-weight:700}
+.right-form .subtitle{color:var(--muted);font-size:14px}
+
+/* Form elements - IMPORTANTES: conservan apariencia visual */
+.form{
+    width:100%;display:flex;flex-direction:column;gap:16px;
+}
+.row{display:flex;gap:12px}
+.col{flex:1;display:flex;flex-direction:column;gap:8px}
+label{font-size:13px;color:var(--text-dark)}
+input[type="text"], input[type="date"], input[type="time"], select, textarea{
+    background:var(--input-bg);
+    border:1px solid var(--input-border);
+    border-radius:10px;padding:10px 12px 10px 40px;
+    font-size:14px;color:var(--text-dark);outline:none;width:100%;
+    box-shadow:none;
+}
+textarea{min-height:120px;resize:vertical;padding-top:12px;padding-left:12px}
+/* icon placeholders: keep space for icons */
+.input-with-icon{position:relative}
+.input-with-icon .icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;opacity:.9}
+
+/* Estado selector / boton */
+.primitivebutton{display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:10px;background:var(--input-bg);border:1px solid var(--input-border)}
+.button-submit{
+    height:48px;border-radius:10px;border:0;cursor:pointer;background:linear-gradient(180deg,var(--accent1),var(--accent2));color:#fff;font-size:16px;box-shadow:0 10px 15px -3px rgba(0,0,0,.1);
 }
 
-label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 5px;
-}
+/* Info boxes en la parte inferior del card */
+.info-row{display:flex;gap:16px;padding:20px}
+.info-box{flex:1;border-radius:14px;padding:14px;color:#fff;background:linear-gradient(180deg,var(--accent1),var(--accent2));box-shadow:0 10px 15px -3px rgba(0,0,0,.1)}
 
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 15px;
-}
+/* Burbujas difusas (decorativas) */
+.bg-blur{position:absolute;border-radius:50%;filter:blur(128px);width:384px;height:384px;opacity:.08}
+.bg-blur.a{top:-120px;right: -40px;background:rgba(3,2,19,.05)}
+.bg-blur.b{bottom:-120px;left:-120px;background:rgba(81,162,255,.05)}
 
-textarea {
-    resize: none;
+/* Responsive */
+@media (max-width:1100px){
+    .hero-card{flex-direction:column}
+    .left-visual{width:100%;height:320px}
+    .right-form{padding:24px}
+    .info-row{flex-direction:column}
 }
-
-.btn-agendar {
-    background-color: #28a745;
-    color: white;
-    padding: 12px;
-    width: 100%;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+@media (max-width:760px){
+    .formulario-de-agendar-cita{flex-direction:column}
+    .container33{width:100%;min-width:0;display:flex;flex-direction:row;align-items:center;justify-content:space-between;padding:8px 12px}
+    .main-area{padding:12px}
+    .hero-card{border-radius:12px}
+    .left-visual .overlay{padding:20px}
+    input[type="text"], textarea{padding-left:12px} /* menor espacio para que no se vea comprimido */
 }
+.input-with-icon input {
+     padding-left: 40px !important;
+ }
 
-.btn-agendar:hover {
-    background-color: #218838;
+.input-with-icon textarea {
+    padding-left: 12px !important;
+}
+.icon {
+    pointer-events: none;
 }

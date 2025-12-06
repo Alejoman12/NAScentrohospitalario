@@ -1,0 +1,117 @@
+/*================== VARIABLES (sin cambios en colores/ fuente) ==================*/
+:root{
+    --font-main: Arimo;
+    --white: #fff;
+    --dark: #030213;
+    --blue1: #51a2ff;
+    --blue2: #3d8ceb;
+    --gray1: #6c757d;
+    --gray2: #717182;
+    --border: #e5e7eb;
+    --bg-light: #f8f9fa;
+}
+
+/* ========== RESET + UTILIDADES ========== */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#app{height:100%}
+body{font-family:var(--font-main),system-ui,Arial,Helvetica,sans-serif;background:var(--white);color:var(--dark);-webkit-font-smoothing:antialiased}
+.flex{display:flex}.col{flex-direction:column}.row{flex-direction:row}.a-center{align-items:center}.j-center{justify-content:center}
+.round-10{border-radius:10px}.round-12{border-radius:12px}
+
+/* ========== LAYOUT PRINCIPAL ========== */
+.app{display:flex;min-height:100vh}
+
+/* SIDEBAR: mantiene 280px y colores originales */
+.sidebar{
+    width:280px;
+    background:var(--dark);
+    color:rgba(255,255,255,0.92);
+    display:flex;
+    flex-direction:column;
+    padding:20px 16px;
+    gap:18px;
+}
+
+/* Branding */
+.branding{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:12px;box-shadow:0 10px 15px -3px rgba(0,0,0,0.1)}
+.role{font-size:16px}
+
+/* NAV */
+.nav{display:flex;flex-direction:column;gap:8px;flex:1}
+.nav-btn{
+    display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;background:transparent;border:0;color:inherit;cursor:pointer;font-size:15px;
+}
+.nav-btn img{width:20px;height:20px}
+.nav-btn.primary{background:var(--blue1);color:#fff}
+.nav-btn.danger{background:#fb2c36;color:#fff}
+
+/* PROFILE FOOTER */
+.profile{display:flex;align-items:center;gap:12px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px}
+.avatar{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--blue1),var(--blue2));color:#fff;font-weight:700}
+.profile-info .name{font-size:14px}.profile-info .email{font-size:12px;color:rgba(255,255,255,0.7)}
+
+/* ========== MAIN ========== */
+.main{flex:1;background:#fafafa;padding:28px 48px;display:flex;flex-direction:column;gap:24px;min-width:0}
+
+/* Header */
+.main-header h1{font-size:22px;margin-bottom:6px}
+.main-header p{color:var(--gray1);font-size:14px}
+
+/* Controls: filtro + buscador + stats */
+.controls{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.select-estado{padding:10px;border-radius:10px;border:1px solid var(--border);background:#fff}
+.search-form{display:flex;gap:8px;align-items:center}
+.search-input{
+    width:320px;max-width:60vw;padding:10px 12px;border-radius:10px;border:1px solid var(--border);
+    background:var(--bg-light);outline:none;font-size:14px
+}
+.search-input:focus{box-shadow:0 0 0 3px rgba(81,162,255,0.12);border-color:var(--blue1)}
+.search-submit{padding:10px 14px;border-radius:10px;border:0;background:var(--blue1);color:#fff;cursor:pointer}
+
+/* Stats */
+.stats{display:flex;gap:12px;margin-left:auto}
+.stat{padding:12px;border-radius:10px;display:flex;flex-direction:column;gap:6px;min-width:120px}
+.card-accent{background:linear-gradient(180deg,var(--blue1),var(--blue2));color:#fff}
+.card-light{background:var(--bg-light);border:1px solid var(--border)}
+.stat-title{font-size:13px;color:var(--gray1)}
+.stat-value{font-size:20px;font-weight:700}
+
+/* ========== TABLA ========== */
+.table-wrap{background:#fff;border-radius:12px;padding:16px;overflow:auto;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.patients-table{width:100%;border-collapse:collapse;min-width:800px}
+.patients-table thead{background:var(--bg-light)}
+.patients-table th, .patients-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--border);font-size:14px}
+.patients-table th{font-weight:700;color:var(--gray2)}
+.status{padding:6px 10px;border-radius:8px;display:inline-block;font-weight:600;font-size:13px}
+.status.active{background:rgba(81,162,255,0.12);color:var(--blue1)}
+.status.inactive{background:rgba(0,0,0,0.04);color:var(--gray1)}
+.table-footer{padding:12px 0;color:var(--gray1);font-size:13px}
+
+/* ========== RESPONSIVE ========== */
+/* tablets */
+@media (max-width: 1024px){
+    .sidebar{width:220px;padding:16px}
+    .search-input{width:260px}
+    .main{padding:20px}
+}
+
+/* pantallas pequeñas: sidebar colapsa en horizontal top, el layout se vuelve column */
+@media (max-width: 720px){
+    .app{flex-direction:column}
+    .sidebar{width:100%;display:flex;flex-direction:row;align-items:center;gap:12px;padding:12px 10px}
+    .nav{display:flex;gap:8px;overflow:auto}
+    .nav-btn span{display:none} /* mantener íconos para ahorro de espacio; si prefieres se puede mostrar texto */
+    .profile{display:none}
+    .main{padding:16px}
+    .controls{flex-direction:column;align-items:stretch}
+    .stats{margin-left:0;justify-content:space-between}
+    .patients-table{min-width:0;font-size:13px}
+    .search-input{width:100%}
+}
+
+/* muy pequeño */
+@media (max-width:420px){
+    .patients-table th, .patients-table td{padding:10px}
+    .stat{min-width:90px;padding:8px}
+}
