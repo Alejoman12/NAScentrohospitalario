@@ -1,4 +1,6 @@
 <%@ page import="com.hospital.model.Usuario" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.hospital.model.Paciente" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     HttpSession sesion = request.getSession(false);
@@ -40,10 +42,13 @@
                 </button>
             </form>
 
-            <button class="nav-btn primary" type="button">
-                <img src="${pageContext.request.contextPath}/imgenes/IconHistorialPaciente.svg" alt="">
-                <span>Ver listado de pacientes</span>
-            </button>
+            <form action="<%= request.getContextPath() %>/ListarPacientes" method="get">
+                <button class="nav-btn primary" type="submit">
+                    <img src="${pageContext.request.contextPath}/imgenes/IconHistorialPaciente.svg" alt="">
+                    <span>Ver listado de pacientes</span>
+                </button>
+            </form>
+
 
             <form action="<%= request.getContextPath() %>/jsp/consultarDisponibilidad.jsp" method="get">
                 <button class="nav-btn" type="submit">
@@ -77,39 +82,44 @@
         </header>
 
         <section class="controls">
-            <div class="filters">
-                <select name="estado" class="select-estado">
-                    <option>Todos los estados</option>
-                    <option>Activo</option>
-                    <option>Inactivo</option>
-                </select>
-            </div>
 
             <!-- BUSCADOR FUNCIONAL -->
-            <form class="search-form" action="<%= request.getContextPath() %>/jsp/listadoPacientes.jsp" method="get">
+            <form class="search-form" action="<%= request.getContextPath() %>/ListarPacientes" method="get">
+
+                <!-- Campo de búsqueda -->
                 <input
                         class="search-input"
                         type="text"
-                        name="q"
-                        placeholder="Buscar por nombre o ID..."
+                        name="busqueda"
+                        value="${busqueda}"
+                        placeholder="Buscar por nombre, ID o documento..."
                         aria-label="Buscar por nombre o ID"
                 />
+
+                <!-- Select para filtrar -->
+                <select name="estado" class="select-estado">
+                    <option value="todos"   ${estado == "todos"   ? "selected" : ""}>Todos</option>
+                    <option value="activo"  ${estado == "activo"  ? "selected" : ""}>Activos</option>
+                    <option value="inactivo"${estado == "inactivo"? "selected" : ""}>Inactivos</option>
+                </select>
+
                 <button type="submit" class="search-submit">Buscar</button>
             </form>
+
 
             <!-- TARJETAS DE ESTADÍSTICAS -->
             <div class="stats">
                 <div class="stat card-accent">
                     <div class="stat-title">Total Pacientes</div>
-                    <div class="stat-value">8</div>
+                    <div class="stat-value">${totalPacientes}</div>
                 </div>
                 <div class="stat card-light">
                     <div class="stat-title">Activos</div>
-                    <div class="stat-value">6</div>
+                    <div class="stat-value">${activosPacientes}</div>
                 </div>
                 <div class="stat card-light">
                     <div class="stat-title">Inactivos</div>
-                    <div class="stat-value">2</div>
+                    <div class="stat-value">${inactivosPacientes}</div>
                 </div>
             </div>
         </section>
@@ -119,23 +129,37 @@
             <table class="patients-table" aria-label="Listado de pacientes">
                 <thead>
                 <tr>
-                    <th>ID</th><th>Nombre</th><th>Edad</th><th>Género</th><th>Teléfono</th><th>Última Visita</th><th>Estado</th>
+                    <th>ID</th><th>Nombre</th><th>Fecha de Nacimiento</th><th>Género</th><th>Teléfono</th><th>Documento</th><th>Estado</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr><td>P-001</td><td>María García López</td><td>35</td><td>Femenino</td><td>+34 612 345 678</td><td>14 de noviembre de 2025</td><td class="status active">Activo</td></tr>
-                <tr><td>P-002</td><td>Juan Martínez Ruiz</td><td>42</td><td>Masculino</td><td>+34 623 456 789</td><td>19 de noviembre de 2025</td><td class="status active">Activo</td></tr>
-                <tr><td>P-003</td><td>Ana Rodríguez Sánchez</td><td>28</td><td>Femenino</td><td>+34 634 567 890</td><td>4 de octubre de 2025</td><td class="status active">Activo</td></tr>
-                <tr><td>P-004</td><td>Carlos Fernández Torres</td><td>56</td><td>Masculino</td><td>+34 645 678 901</td><td>27 de noviembre de 2025</td><td class="status active">Activo</td></tr>
-                <tr><td>P-005</td><td>Laura Pérez Gómez</td><td>31</td><td>Femenino</td><td>+34 656 789 012</td><td>11 de septiembre de 2025</td><td class="status inactive">Inactivo</td></tr>
-                <tr><td>P-006</td><td>Miguel Ángel Díaz</td><td>47</td><td>Masculino</td><td>+34 667 890 123</td><td>29 de noviembre de 2025</td><td class="status active">Activo</td></tr>
-                <tr><td>P-007</td><td>Isabel Moreno Cruz</td><td>39</td><td>Femenino</td><td>+34 678 901 234</td><td>24 de noviembre de 2025</td><td class="status active">Activo</td></tr>
-                <tr><td>P-008</td><td>Francisco López Martín</td><td>63</td><td>Masculino</td><td>+34 689 012 345</td><td>19 de agosto de 2025</td><td class="status inactive">Inactivo</td></tr>
+                <%
+                    List<Paciente> pacientes = (List<Paciente>) request.getAttribute("pacientes");
+                    if (pacientes != null && !pacientes.isEmpty()) {
+                        for (Paciente p : pacientes) {
+                %>
+                <tr>
+                    <td><%= p.getIdPaciente() %></td>
+                    <td><%= p.getNombreUsuario() %></td>
+                    <td><%= p.getFechaNacimiento() %></td>
+                    <td><%= p.getGenero() %></td>
+                    <td><%= p.getTelefono() %></td>
+                    <td><%= p.getDocumentoIdentidad() %></td>
+                    <td><%= p.isActivo() ? "Activo" : "Inactivo" %></td>
+                </tr>
+                <%
+                    }
+                } else {
+                %>
+                <tr>
+                    <td colspan="5">No se encontraron pacientes.</td>
+                </tr>
+                <% } %>
                 </tbody>
             </table>
 
             <div class="table-footer">
-                Mostrando 8 de 8 pacientes
+                Mostrando ${totalPacientes} pacientes
+
             </div>
         </section>
     </main>

@@ -41,8 +41,8 @@
                 </button>
             </form>
 
-            <form action="<%= request.getContextPath() %>/jsp/listadoPacientes.jsp" method="get">
-                <button class="menu-btn">
+            <form action="<%= request.getContextPath() %>/ListarPacientes" method="get">
+                <button class="menu-btn" type="submit">
                     <img src="${pageContext.request.contextPath}/imgenes/IconHistorialPaciente.svg" alt="">
                     <span>Ver listado de pacientes</span>
                 </button>
