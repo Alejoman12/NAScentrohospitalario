@@ -47,7 +47,7 @@ public class LoginUsuarioServlet extends HttpServlet {
 
                     if (paciente != null) {
                         session.setAttribute("paciente", paciente);
-                        response.sendRedirect("jsp/paciente.jsp");
+                        response.sendRedirect("verCitasPaciente");
                     } else {
                         System.out.println("Paciente no encontrado");
                         response.sendRedirect("index.jsp?error=paciente_no_encontrado");

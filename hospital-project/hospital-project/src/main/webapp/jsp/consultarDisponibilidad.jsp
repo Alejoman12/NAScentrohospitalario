@@ -1,5 +1,7 @@
 <%@ page import="com.hospital.model.Usuario" %>
+<%@ page import="com.hospital.dao.PacienteDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%
     HttpSession sesion = request.getSession(false);
     Usuario usuario = (sesion != null) ? (Usuario) sesion.getAttribute("usuario") : null;
@@ -9,13 +11,38 @@
         return;
     }
 %>
+
+<%
+    // ==== CORREGIDO ====
+    String idMedico = request.getParameter("medicoId");
+    String fechaHora = request.getParameter("fechaHora");  // <--- este era el error
+
+    String mensaje = null;
+
+    if (idMedico != null && fechaHora != null && !idMedico.isEmpty() && !fechaHora.isEmpty()) {
+
+        try {
+            PacienteDAO dao = new PacienteDAO();
+            boolean disponible = dao.tieneDisponibilidad(idMedico, fechaHora);
+
+            if (disponible) {
+                mensaje = "El médico con ID " + idMedico + " SÍ tiene disponibilidad el día y hora: " + fechaHora.replace('T',' ');
+            } else {
+                mensaje = "El médico con ID " + idMedico + " NO tiene disponibilidad el día y hora: " + fechaHora.replace('T',' ');
+            }
+
+        } catch (Exception e) {
+            mensaje = "Ocurrió un error validando disponibilidad.";
+        }
+    }
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <link rel="stylesheet" href="<%= request.getContextPath() %>/css/styles-consultarDisponibilidad.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=[object Object]&display=swap" />
     <title>Consultar Disponibilidad</title>
 </head>
 <body>
@@ -45,14 +72,12 @@
                 </button>
             </form>
 
-            <!-- Botón activo: Consultar disponibilidad (sin submit) -->
             <button class="menu-btn active" aria-current="page">
                 <img src="${pageContext.request.contextPath}/imgenes/IconDianostico.svg" alt="">
                 <span>Consultar disponibilidad</span>
             </button>
 
-            <!-- Cerrar sesión (manteniendo la ruta original) -->
-            <form action="<%= request.getContextPath() %>/jsp/agendarCita.jsp" method="get">
+            <form action="<%= request.getContextPath() %>/Logout" method="post">
                 <button class="menu-btn logout" type="submit">
                     <img src="${pageContext.request.contextPath}/imgenes/Icono_cerrar_secion.svg" alt="">
                     <span>Cerrar sesión</span>
@@ -75,9 +100,7 @@
             <div class="hero-wrapper">
                 <img class="hero-image" src="${pageContext.request.contextPath}/imgenes/imagenAgendarCita.jpg" alt="imagen">
 
-                <!-- TEXTO SUPERPUESTO -->
                 <div class="hero-overlay">
-
                     <div class="brand">
                         <div class="brand-text">
                             <h1>NAS Centro hospitalario</h1>
@@ -109,19 +132,17 @@
             </div>
         </section>
 
-
-        <!-- PANEL CONSULTA: aquí los inputs reales -->
+        <!-- PANEL CONSULTA -->
         <aside class="panel">
             <h3>Consultar Disponibilidad</h3>
             <p class="panel-sub">Busque horarios disponibles para su consulta médica</p>
 
-            <!-- FORMULARIO: puedes cambiar action si tienes endpoint -->
             <form class="search-form" method="get" action="">
                 <label for="medicoId" class="label">ID del Médico</label>
                 <input id="medicoId" name="medicoId" type="text" placeholder="Ingrese el ID del médico" class="input" />
 
-                <label for="fecha" class="label">Fecha *</label>
-                <input id="fecha" name="fecha" type="date" class="input" />
+                <label for="fechaHora" class="label">Fecha y hora *</label>
+                <input id="fechaHora" name="fechaHora" type="datetime-local" class="input" required />
 
                 <label for="especialidad" class="label">Especialidad</label>
                 <select id="especialidad" name="especialidad" class="select">
@@ -134,7 +155,14 @@
                 </select>
 
                 <button type="submit" class="primary-btn">Buscar Disponibilidad</button>
+
+                <% if (mensaje != null) { %>
+                <div style="margin-top:15px; padding:12px; background:#e8f0fe; color:#0b57d0; border-radius:8px;">
+                    <%= mensaje %>
+                </div>
+                <% } %>
             </form>
+
         </aside>
     </main>
 </div>

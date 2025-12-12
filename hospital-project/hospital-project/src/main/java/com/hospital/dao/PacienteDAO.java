@@ -1,7 +1,6 @@
 package com.hospital.dao;
 
 import com.hospital.database.SQL;
-import com.hospital.model.Administrador;
 import com.hospital.model.Paciente;
 
 import java.sql.Connection;
@@ -42,7 +41,6 @@ public class PacienteDAO {
         }
     }
 
-
     public int contarPacientes() {
         String sqlQuery = "SELECT COUNT(*) FROM paciente";
         return ejecutarContador(sqlQuery);
@@ -78,8 +76,6 @@ public class PacienteDAO {
         return 0;
     }
 
-
-
     public Paciente obtenerPorId(int idUsuario) {
         String query = "SELECT * FROM paciente WHERE id_usuario = ?";
         SQL sql = new SQL();
@@ -91,7 +87,7 @@ public class PacienteDAO {
             stmt.setInt(1, idUsuario);
             ResultSet rs = stmt.executeQuery();
 
-            if(rs.next()) {
+            if (rs.next()) {
                 Paciente paciente = new Paciente();
                 paciente.setId(rs.getInt("id_usuario"));
                 paciente.setIdPaciente(rs.getString("id_paciente"));
@@ -124,7 +120,6 @@ public class PacienteDAO {
                         "OR p.correo LIKE ? " +
                         "OR u.nombre LIKE ?)";
 
-        // Filtros por estado
         if (estado != null) {
             if (estado.equals("activo")) {
                 sql += " AND p.activo = TRUE";
@@ -144,14 +139,13 @@ public class PacienteDAO {
             stmt.setString(1, like);
             stmt.setString(2, like);
             stmt.setString(3, like);
-            stmt.setString(4, like); // Buscar también por nombre de usuario
+            stmt.setString(4, like);
 
             ResultSet rs = stmt.executeQuery();
 
             while (rs.next()) {
                 Paciente p = new Paciente();
 
-                // Campos de paciente
                 p.setId(rs.getInt("id_usuario"));
                 p.setIdPaciente(rs.getString("id_paciente"));
                 p.setDocumentoIdentidad(rs.getString("documento_identidad"));
@@ -162,8 +156,6 @@ public class PacienteDAO {
                 p.setCorreo(rs.getString("correo"));
                 p.setIdMedico(rs.getString("id_medico"));
                 p.setActivo(rs.getBoolean("activo"));
-
-                // Campo del usuario
                 p.setNombreUsuario(rs.getString("nombre_usuario"));
 
                 lista.add(p);
@@ -177,8 +169,6 @@ public class PacienteDAO {
 
         return lista;
     }
-
-
 
     public boolean actualizarPaciente(Paciente paciente) {
         String query = "UPDATE paciente SET documento_identidad = ?, fecha_nacimiento = ?, genero = ?, direccion = ?, telefono = ?, correo = ?, activo = ? WHERE id_usuario = ?";
@@ -223,5 +213,41 @@ public class PacienteDAO {
             conexion.disconnectDatabase();
         }
     }
+
+    public boolean tieneDisponibilidad(String idMedico, String fechaHora) {
+
+        String sql = "SELECT COUNT(*) AS total " +
+                "FROM cita " +
+                "WHERE id_medico = ? " +
+                "AND fecha_hora = ? " +
+                "AND estado = 'Pendiente' " +
+                "AND activo = 1";
+
+        SQL conexion = new SQL();
+        conexion.connectDatabase();
+
+        try (Connection con = conexion.getConnection();
+             PreparedStatement pst = con.prepareStatement(sql)) {
+
+            pst.setString(1, idMedico);
+            pst.setString(2, fechaHora);   // "2025-12-11 15:20:00"
+
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                return rs.getInt("total") == 0;
+            }
+
+        } catch (Exception e) {
+            System.out.println("ERROR al validar disponibilidad:");
+            e.printStackTrace();
+            return false;
+        } finally {
+            conexion.disconnectDatabase();
+        }
+
+        return true;
+    }
+
 
 }

@@ -68,7 +68,7 @@
         </div>
 
         <nav class="nav" aria-label="Acciones">
-            <form action="<%= request.getContextPath() %>/jsp/paciente.jsp" method="get">
+            <form action="<%= request.getContextPath() %>/verCitasPaciente" method="get">
                 <button class="btn btn--ghost" type="submit">
                     <img src="${pageContext.request.contextPath}/imgenes/IconAgenda.svg" alt="">
                     <span>Ver mis citas</span>
