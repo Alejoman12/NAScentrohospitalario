@@ -68,19 +68,19 @@
         </div>
 
         <nav class="nav" aria-label="Acciones">
-            <form action="<%= request.getContextPath() %>/jsp/paciente.jsp" method="get">
-                <button class="btn btn--primary" type="submit">
+            <form action="<%= request.getContextPath() %>/verCitasPaciente" method="get">
+                <button class="btn btn--ghost" type="submit">
                     <img src="${pageContext.request.contextPath}/imgenes/IconAgenda.svg" alt="">
                     <span>Ver mis citas</span>
                 </button>
             </form>
 
-            <button class="btn btn--ghost" type="submit">
+            <button class="btn btn--primary" type="submit">
                 <img src="${pageContext.request.contextPath}/imgenes/Icono_configuraciones.svg" alt="">
                 <span>Actualizar datos</span>
             </button>
 
-            <form action="<%= request.getContextPath() %>/logout" method="post">
+            <form action="<%= request.getContextPath() %>/" method="post">
                 <button class="btn btn--danger" type="submit">
                     <img src="${pageContext.request.contextPath}/imgenes/Icono_cerrar_secion.svg" alt="">
                     <span>Cerrar sesión</span>
